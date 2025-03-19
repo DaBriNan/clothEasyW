@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="estilo.css" >
+    <title>ClothEeasy</title>
+
+    <header class="barra-menu">
+        <div class="Titulo"><span class="black">Cloth</span><span class="blue">Easy</span></div>
+        <div class="barra">
+            <form class="search-bar" action="/buscar" method="get">
+                <input type="text" placeholder="Buscar..." name="q">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+        <div class="vender"><span class="texto">Vender</span></div>
+        <div class="comprar"><span class="textoc">Comprar</span></div>
+        <div class="paraTi"><span class="textop">Para ti</span></div>
+        <div class="meGusta">
+            <img src="Heart.png" alt="meGusta" class="imagen">
+        </div>
+        <div class="user">
+            <img src="user.png" alt="login" class="imagen">
+        </div>
+    </header>
+</head>
+
+<body>
+
+    
+     <h1><span class="azul">Bolsa de</span> <span class="celeste">Compra</span></h1>
+     <br>
+
+    <div class="contenedor">
+        <!-- Sección de productos -->
+        <div class="productos">
+            
+            
+            <div class="item">
+                <div class="imagen-contenedor">
+                    <img src="palm.png" alt="Sudadera Palm Angels">
+                </div>
+                <div>
+                    <h3>Sudadera Palm Angels</h3>
+                    <p class="precio">$2,499.00</p>
+                    <p>Talla M</p>
+                </div>
+            </div>
+            
+            <div class="item">
+                <div class="imagen-contenedor">
+                    <img src="cafe.png" alt="Suéter Ami Paris">
+                </div>
+                <div class="product-details">
+                    <h3>Suéter Ami Paris</h3>
+                    <p class="precio">$1,299.00</p>
+                </div>
+                <br>
+                <p>Talla S</p>
+            </div>
+        </div>
+
+        <div class="resumen">
+            <h2>Resumen</h2>
+            <div class="detalle">
+                <p>Subtotal <span class="precio">$3,798.00</span></p>
+                <p>Gastos de envío y gestión estimados <span class="gratis">GRATIS</span></p>
+            </div>
+            <hr>
+            <div class="total">
+                <h3>Total <span class="precio">$3,798.00</span></h3>
+            </div>
+            <div class="metodos-pago">
+                
+                <h3>Método de Pago</h3>
+                <button class="tarjeta" >Tarjeta</button>
+                <button class="apple-pay" > Pay</button>
+                <button class="paypal" >PayPal</button>
+            </div>
+        </div>
+    </div>   
+
+</body>
+</html>

@@ -1,0 +1,427 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+body {
+    background: linear-gradient(to bottom, #F6C1A7 0%, #E2DFDF 100%);
+    
+}
+body{
+    background-repeat: no-repeat; /* Evita que el degradado se repita */
+    background-attachment: fixed; 
+}
+
+.barra-menu {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(153, 45, 45, 0.0);
+    padding: 5px 10px;
+    gap: 50px;
+}
+
+.Titulo {
+    font-family: Outfit;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.black {
+    color: black;
+}
+
+.blue {
+    background: linear-gradient(105deg, #8781FF 12.17%, #6A65C8 38.22%, #514D99 49.17%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.barra {
+    padding-top: 5px;
+}
+
+.search-bar input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #2731a3;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #4f59c9;
+}
+
+.vender {
+    display: inline-block;
+    /* Para que el fondo se ajuste al contenido */
+    border-radius: 25px;
+    background: linear-gradient(90deg, #8781FF 0%, #4C47A7 53%, #6A65C6 100%);
+    padding: 10px 20px;
+    /* Aumentar padding para agrandar el fondo */
+}
+
+.vender .texto {
+    color: #FFF;
+    font-family: Outfit;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.comprar {
+    display: inline-block;
+    /* Para que el fondo se ajuste al contenido */
+    border-radius: 25px;
+    background: linear-gradient(90deg, #87D3F5 0%, #68A3BD 55%, #008CCA 100%);
+    padding: 10px 20px;
+    /* Aumentar padding para agrandar el fondo */
+}
+
+.comprar .textoc {
+    color: #FFF;
+    font-family: Outfit;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.paraTi {
+    display: inline-block;
+    /* Para que el fondo se ajuste al contenido */
+    border-radius: 25px;
+    background: linear-gradient(93deg, #7B895D 6.37%, #71824D 38.67%, #3F5A05 77.37%);
+    padding: 10px 20px;
+    /* Aumentar padding para agrandar el fondo */
+}
+
+.paraTi .textop {
+    color: #FFF;
+    font-family: Outfit;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+/*lista debajo de la barra de menu*/
+
+.lista-horizontal {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    gap: 12%;
+    justify-content: center;
+    background-color: rgba(153, 45, 45, 0.021);
+
+}
+
+.lista-horizontal li {
+    color: #FFF;
+
+    font-family: Outfit;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    gap: 5px; 
+}
+
+.texto{
+    flex: 1;
+    max-width: 75%;
+    margin-top: -10%;
+    margin-bottom: -15%;
+    margin-left: -20%;
+    
+}
+
+.texto h1 {
+    font-size: 4em;
+    font-family: Outfit;
+    color: #333;
+    
+}
+
+.azul {
+    background: linear-gradient(105deg, #8781FF 12.17%, #6A65C8 38.22%, #514D99 49.17%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.boton {
+    background: #ff792f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.6em;
+    margin-top: 15%;
+    margin-left: 15%;
+}
+
+.modelo {
+    max-width: 750px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+}
+
+.carrito {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 1.5em;
+}
+
+
+
+
+
+
+
+
+
+
+.contenedor {
+    display: flex;
+    height: 100vh;
+    
+}
+
+.productos {
+    width: 100%;
+   
+    /* padding: 20px; */
+}
+
+
+
+.resumen {
+    width: 622px;
+    height: auto; 
+    background: #D1D1D1;
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+}
+
+.resumen h2 {
+    text-align: left;
+    font-family: Outfit;
+    color: #333; 
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.resumen .detalle {
+    text-align: left; 
+    margin-bottom: 20px;
+}
+.resumen .detalle p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555; 
+}
+
+.resumen .detalle .precio {
+    float: right; 
+    font-weight: bold;
+    color: #000; 
+}
+
+.resumen .detalle .gratis {
+    float: right; 
+    color: green;
+    font-weight: bold;
+}
+.resumen hr {
+    border: 0;
+    height: 1px;
+    background: #ccc; 
+    margin: 20px 0;
+}
+
+.resumen .total {
+    text-align: left; 
+    margin-bottom: 20px;
+}
+
+.resumen .total h3 {
+    font-size: 20px;
+    color: #333; 
+}
+
+.resumen .total .precio {
+    float: right; 
+    font-weight: bold;
+    color: #000; 
+}
+
+.resumen .metodos-pago {
+    
+    display:flex; 
+    flex-direction:row; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.resumen .metodos-pago h3 {
+    
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333; 
+}
+
+.resumen .metodos-pago button {
+    width: 200px; 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 0;
+}
+
+.resumen .metodos-pago .tarjeta {
+    background: blue;
+    color: white;
+}
+.resumen .metodos-pago .apple-pay {
+    background: black;
+    color: white;
+}
+
+.resumen .metodos-pago .paypal {
+    background: #009cde;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+}
+.item {
+    width: 80%;
+    /* justify-content: space-between; */
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    align-content: center;
+}
+
+.item img {
+    width: auto;
+    height: 200px;
+    
+    margin-right: 15px;
+    border-radius: 5px;
+    padding: 10px;
+    align-content: center;
+}
+
+.imagen-contenedor {
+    margin-right: 24px;
+    background: white; 
+    padding: 10px; /* Espacio interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    display: inline-block; /* Ajusta el tamaño al contenido */
+}
+
+.imagen-contenedor img {
+    display: block; /* Elimina el espacio debajo de la imagen */
+    width: 134px; /* Ancho de la imagen */
+    height: 179px; /* Alto de la imagen */
+    border-radius: 5px; /* Bordes redondeados para la imagen */
+}
+
+
+
+.precio {
+    font-weight: bold;
+    color: black;
+}
+.gratis {
+    color: green;
+    font-weight: bold;
+}
+
+.product-details{
+    display: flex;
+    flex-direction: row;
+    
+
+}
+
+.metodos-pago button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+    
+}
+
+.tarjeta {
+    background: blue;
+    color: white;
+}
+
+.apple-pay {
+    background: black;
+    color: white;
+}
+
+.paypal {
+    background: #009cde;
+    color: white;
+}
+h2,h3 {
+    text-align: center;
+}
+
+
+p{
+    text-align:left;
+}
+.precio{
+    text-align: right;
+}
+
