@@ -83,7 +83,7 @@
                 <span>26 <small>min</small></span>
                 <span>12 <small>seg</small></span>
             </div>
-            <button class="btn-comprar">COMPRAR</button>
+            <button class="btn-comprar" onclick="ir_a_compra()">COMPRAR</button>
             <p class="nota">*T&C compras mayores a $1,497 MXN</p>
         </div>
         
@@ -135,7 +135,13 @@
         </div>
     </footer>
     
-    
+    <script>
+        function ir_a_compra(){
+            window. location. replace('./compras/index.html')
+            //window.open('/compras/index.html', '_blank')
+        }
+
+    </script>
     
     
 </body>
