@@ -282,6 +282,7 @@ body{
 }
 
 .resumen .total h3 {
+    
     font-size: 20px;
     color: #333; 
 }
@@ -302,7 +303,7 @@ body{
 
 .resumen .metodos-pago h3 {
     
-    text-align: center;
+    text-align: left;
     font-size: 20px;
     margin-bottom: 10px;
     color: #333; 
@@ -413,8 +414,11 @@ h1 {
     background: #009cde;
     color: white;
 }
-h2,h3 {
+h2 {
     text-align: center;
+}
+h3{
+    text-align: left;
 }
 
 
@@ -434,3 +438,15 @@ p{
 a{
     text-decoration: none;
 }
+
+.total.hr{
+    border: 0;
+    height: 1px;
+    background: #ccc; 
+    margin: 20px 0;
+}
+
+p.precio{
+    text-align: right;
+}
+
