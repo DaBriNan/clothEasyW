@@ -425,3 +425,12 @@ p{
     text-align: right;
 }
 
+.imgMenu{
+    
+    left: 50px;
+    display: block;
+    height: 50px
+}
+a{
+    text-decoration: none;
+}

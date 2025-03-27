@@ -442,9 +442,12 @@ body {
 }
 
 .imgMenu{
-    /* position:absolute; */
-    left: 50px;
     
+    left: 50px;
+    display: block;
     height: 50px
 }
 
+a{
+    text-decoration: none;
+}
