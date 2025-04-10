@@ -26,7 +26,7 @@ body{
 }
 
 .Titulo {
-    font-family: Outfit;
+    font-family: 'Outfit', sans-serif;
     font-size: 45px;
     font-style: normal;
     font-weight: 800;
@@ -75,11 +75,12 @@ body{
     background: linear-gradient(90deg, #8781FF 0%, #4C47A7 53%, #6A65C6 100%);
     padding: 10px 20px;
     /* Aumentar padding para agrandar el fondo */
+    padding-left:3%;
 }
 
 .vender .texto {
     color: #FFF;
-    font-family: Outfit;
+    font-family: 'Outfit', sans-serif;
     font-size: 26px;
     font-style: normal;
     font-weight: 500;
@@ -97,7 +98,7 @@ body{
 
 .comprar .textoc {
     color: #FFF;
-    font-family: Outfit;
+    font-family: 'Outfit', sans-serif;
     font-size: 26px;
     font-style: normal;
     font-weight: 500;
@@ -115,7 +116,7 @@ body{
 
 .paraTi .textop {
     color: #FFF;
-    font-family: Outfit;
+    font-family: 'Outfit', sans-serif;
     font-size: 26px;
     font-style: normal;
     font-weight: 500;
@@ -137,7 +138,7 @@ body{
 .lista-horizontal li {
     color: #FFF;
 
-    font-family: Outfit;
+    font-family: 'Outfit', sans-serif;
     font-size: 25px;
     font-style: normal;
     font-weight: 500;
@@ -166,7 +167,7 @@ body{
 
 .texto h1 {
     font-size: 4em;
-    font-family: Outfit;
+    font-family: 'Outfit', sans-serif;
     color: #333;
     
 }
