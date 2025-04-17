@@ -1,21 +1,19 @@
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+  
+  body {
+    background: linear-gradient(to bottom, #F6C1A7 0%, #E2DFDF 100%)
     
-}
-
-
-body {
-    background: linear-gradient(to bottom, #F6C1A7 0%, #E2DFDF 100%);
-    
-}
-body{
-    background-repeat: no-repeat; /* Evita que el degradado se repita */
+  }
+  body{
+    background-repeat: no-repeat; 
     background-attachment: fixed; 
-}
-
-.barra-menu {
+  }
+  .barra-menu {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -89,11 +87,11 @@ body{
 
 .comprar {
     display: inline-block;
-    /* Para que el fondo se ajuste al contenido */
+    
     border-radius: 25px;
     background: linear-gradient(90deg, #87D3F5 0%, #68A3BD 55%, #008CCA 100%);
     padding: 10px 20px;
-    /* Aumentar padding para agrandar el fondo */
+    
 }
 
 .comprar .textoc {
@@ -107,11 +105,11 @@ body{
 
 .paraTi {
     display: inline-block;
-    /* Para que el fondo se ajuste al contenido */
+   
     border-radius: 25px;
     background: linear-gradient(93deg, #7B895D 6.37%, #71824D 38.67%, #3F5A05 77.37%);
     padding: 10px 20px;
-    /* Aumentar padding para agrandar el fondo */
+   
 }
 
 .paraTi .textop {
@@ -123,7 +121,7 @@ body{
     line-height: normal;
 }
 
-/*lista debajo de la barra de menu*/
+
 
 .lista-horizontal {
     list-style: none;
@@ -192,263 +190,284 @@ body{
 }
 
 .modelo {
-    max-width: 750px; /* Ajusta el tamaño de la imagen */
+    max-width: 750px; 
     height: auto;
 }
 
-.carrito {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: white;
-    padding: 10px;
+
+
+
+
+
+
+  
+  /* Icono del carrito */
+  .cart-icon {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background-color: #fff;
     border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    font-size: 1.5em;
-}
-
-
-
-
-
-
-
-
-
-
-.contenedor {
-    display: flex;
-    height: 100vh;
-    
-}
-
-.productos {
-    width: 100%;
-   
-    /* padding: 20px; */
-}
-
-
-
-.resumen {
-    width: 622px;
-    height: auto; 
-    background: #D1D1D1;
-    padding: 20px;
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    text-align: center; 
-}
-
-.resumen h2 {
-    text-align: left;
-    font-family: Outfit;
-    color: #333; 
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.resumen .detalle {
-    text-align: left; 
-    margin-bottom: 20px;
-}
-.resumen .detalle p {
-    margin: 10px 0;
-    font-size: 16px;
-    color: #555; 
-}
-
-.resumen .detalle .precio {
-    float: right; 
-    font-weight: bold;
-    color: #000; 
-}
-
-.resumen .detalle .gratis {
-    float: right; 
-    color: green;
-    font-weight: bold;
-}
-.resumen hr {
-    border: 0;
-    height: 1px;
-    background: #ccc; 
-    margin: 20px 0;
-}
-
-.resumen .total {
-    text-align: left; 
-    margin-bottom: 20px;
-}
-
-.resumen .total h3 {
-    
-    font-size: 20px;
-    color: #333; 
-}
-
-.resumen .total .precio {
-    float: right; 
-    font-weight: bold;
-    color: #000; 
-}
-
-.resumen .metodos-pago {
-    
-    display:flex; 
-    flex-direction:row; 
-    align-items: center; 
-    gap: 10px; 
-}
-
-.resumen .metodos-pago h3 {
-    
-    text-align: left;
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #333; 
-}
-
-.resumen .metodos-pago button {
-    width: 200px; 
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+    padding: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    font-size: 16px;
-    margin-right: 0;
-}
+    z-index: 1000;
+  }
+  
+  .cart-icon .material-symbols-outlined {
+    font-size: 28px;
+  }
+  
+  .cart-count {
+    background-color: crimson;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 2px 6px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+  }
+  
+  /* Carrito desplegable */
+  .cart-container {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 350px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  
+  .cart-container.active {
+    right: 0;
+  }
+  
+  .cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #eee;
+    font-size: 18px;
+  }
+  
+  .close-cart {
+    cursor: pointer;
+    font-size: 24px;
+  }
 
-.resumen .metodos-pago .tarjeta {
-    background: blue;
-    color: white;
-}
-.resumen .metodos-pago .apple-pay {
-    background: black;
-    color: white;
-}
-
-.resumen .metodos-pago .paypal {
-    background: #009cde;
-    color: white;
-}
-
-h1 {
-    text-align: center;
-    font-size: 36px;
-}
-.item {
-    width: 80%;
-    /* justify-content: space-between; */
+  .cart-icon.hidden {
+    display: none;
+  }
+  
+  /* Overlay oscuro */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 998;
+    display: none;
+  }
+  
+  .overlay.active {
+    display: block;
+  }
+  
+  /* Productos del carrito */
+  #cartItems {
+    padding: 16px;
+  }
+  
+  .cart-item {
+    display: flex;
+    margin-bottom: 12px;
+    gap: 10px;
+  }
+  
+  .cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .item-details {
+    flex: 1;
+  }
+  
+  .item-title {
+    font-weight: bold;
+  }
+  
+  .item-price {
+    color: #333;
+    margin: 4px 0;
+  }
+  
+  .item-controls {
     display: flex;
     align-items: center;
-    margin-left: 40px;
-    margin-bottom: 20px;
-    align-content: center;
-}
-
-.item img {
-    width: auto;
-    height: 200px;
-    
-    margin-right: 15px;
-    border-radius: 5px;
+    gap: 8px;
+  }
+  
+  .quantity-btn, .remove-item {
+    cursor: pointer;
+    color: #444;
+    transition: color 0.2s;
+  }
+  
+  .quantity-btn:hover, .remove-item:hover {
+    color: crimson;
+  }
+  
+  .item-quantity {
+    min-width: 20px;
+    text-align: center;
+  }
+  
+  /* Footer del carrito */
+  .cart-footer {
+    padding: 16px;
+    margin-top: auto;
+    border-top: 1px solid #ddd;
+    background-color: #f9f9f9;
+  }
+  
+  .cart-total h3 {
+    margin-bottom: 10px;
+  }
+  
+  .checkout-btn {
+    width: 100%;
     padding: 10px;
-    align-content: center;
-}
-
-.imagen-contenedor {
-    margin-right: 24px;
-    background: white; 
-    padding: 10px; /* Espacio interno */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    display: inline-block; /* Ajusta el tamaño al contenido */
-}
-
-.imagen-contenedor img {
-    display: block; /* Elimina el espacio debajo de la imagen */
-    width: 134px; /* Ancho de la imagen */
-    height: 179px; /* Alto de la imagen */
-    border-radius: 5px; /* Bordes redondeados para la imagen */
-}
-
-
-
-.precio {
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .checkout-btn:hover {
+    background-color: #2c3e90;
+  }
+  
+  
+  .contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .productos {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    gap: 20px;
+  }
+  
+  .item {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .imagen-contenedor img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  .compra {
+    background-color: #28a745;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 8px;
+  }
+  
+  .compra:hover {
+    background-color: #218838;
+  }
+  
+  .resumen {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    height: fit-content;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .resumen .precio {
     font-weight: bold;
-    color: black;
-}
-.gratis {
+  }
+  
+  .resumen .gratis {
     color: green;
     font-weight: bold;
-}
-
-.product-details{
+  }
+  
+  .metodos-pago {
     display: flex;
-    flex-direction: row;
-    
-
-}
-
-.metodos-pago button {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .metodos-pago button {
     padding: 10px;
+    font-size: 16px;
     border: none;
-    border-radius: 5px;
+    background-color: #ddd;
+    border-radius: 6px;
     cursor: pointer;
-    
-    
-}
-
-.tarjeta {
-    background: blue;
-    color: white;
-}
-
-.apple-pay {
-    background: black;
-    color: white;
-}
-
-.paypal {
-    background: #009cde;
-    color: white;
-}
-h2 {
+  }
+  
+  .metodos-pago button:hover {
+    background-color: #ccc;
+  }
+  
+  /* Título principal */
+  h1 {
     text-align: center;
-}
-h3{
-    text-align: left;
-}
-
-
-p{
-    text-align:left;
-}
-.precio{
-    text-align: right;
-}
-
-.imgMenu{
+    margin: 30px 0;
+  }
+  
+  .azul {
+    color: #2c3e90;
+  }
+  
+  .celeste {
+    color: #3f51b5;
+  }
+  
+  .imgMenu{
     
     left: 50px;
     display: block;
     height: 50px
 }
-a{
+
+
+  a{
     text-decoration: none;
 }
-
-.total.hr{
-    border: 0;
-    height: 1px;
-    background: #ccc; 
-    margin: 20px 0;
-}
-
-p.precio{
-    text-align: right;
-}
-

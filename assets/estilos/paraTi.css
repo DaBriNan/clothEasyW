@@ -6,15 +6,6 @@
 }
 
 
-/* body {
-    background: linear-gradient(to bottom, #F6C1A7 0%, #E2DFDF 100%);
-    
-}
-body{
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
-} */
-
 .barra-menu {
     display: flex;
     align-items: center;
