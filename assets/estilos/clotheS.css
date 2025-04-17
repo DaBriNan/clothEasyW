@@ -154,7 +154,7 @@ body {
 .texto{
     flex: 1;
     max-width: 75%;
-    margin-top: -10%;
+    margin-top: -20%;
     margin-bottom: -15%;
     margin-left: -20%;
     
@@ -451,3 +451,38 @@ body {
 a{
     text-decoration: none;
 }
+
+/* Carrusel Swiper */
+.swiper {
+    width: 100%;
+    padding: 2rem 0;
+    box-sizing: border-box;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #ffffff00;
+  
+    /* Centrar contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    border-radius: 10px;
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #000; /* Cambia si quieres otro color */
+  }
+  
+  .swiper-pagination-bullet {
+    background: #000;
+  }
+  

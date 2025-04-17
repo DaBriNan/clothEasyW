@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/estilos/clotheS.css">
     <link rel="icon" type="image/x-icon" href="assets/img/faviconClo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 </head>
 <body>
     <header class="barra-menu">
-       
-        <!-- <div class="Titulo"><span class="black">Cloth</span><span class="blue">Easy</span></div> -->
-        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
         <a href="index.html">
             <img src="assets/img/logoCloth.png" class="imgMenu" alt="Inicio">
         </a>
@@ -21,9 +22,7 @@
                 <button type="submit">Buscar</button>
             </form>
         </div>
-        <!-- <div class="vender"><span class="texto">Vender</span></div>
-        <div class="comprar"><span class="textoc">Comprar</span></div>
-        <div class="paraTi"><span class="textop">Para ti</span></div> -->
+
         <a href="pages/vender.html" class="vender"><span class="texto">Vender</span></a>
         <a href="pages/compras.html" class="comprar"><span class="textoc">Comprar</span></a>
         <a href="pages/paraTi.html" class="paraTi"><span class="textop">Para ti</span></a>
@@ -34,8 +33,8 @@
         <a href="/pages/login.html" class="user">
             <img src="/assets/img/user.png" alt="login" class="imagen">
         </a>
-        
     </header>
+
     <ul class="lista-horizontal">
         <li>Hombre</li>
         <li>Mujer</li>
@@ -45,31 +44,65 @@
 
     <div class="banner">
         <img src="assets/img/Mujer.png" class="modelo" alt="Mujer señalando">
-
         <div class="texto">
             <h1><span class="azul">Recicla.</span> Clotheasy,<br> lo hace easy.</h1>
-            <!-- <button class="boton">EMPEZAR A VENDER ▶</button> -->
             <a href="/pages/vender.html" class="btn-vender">Empezar a vender</a>
-
         </div>
         <div class="carrito">
             🛒<span class="notificacion">1</span>
         </div>
-        
     </div>
+
     <div>
         <img src="assets/img/separador.png" class="separador" alt="barra separadora">
     </div>
 
-    <div class="nuevo-div">
-        <h2>¡LO MÁS NUEVO!</h2>
-        <div class="productos">
-            <img src="assets/img/cafe.png" alt="Producto 1">
-            <img src="assets/img/palm.png" alt="Producto 2">
-            <img src="assets/img/polo.png" alt="Producto 3">
+    <!-- Carrusel -->
+    <!-- Carrusel -->
+<div class="nuevo-div">
+    <h2>¡LO MÁS NUEVO!</h2>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="assets/img/cafe.png" alt="Producto 1">
+                <h4>Sudadera Café</h4>
+                <p>$399 MXN</p>
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/img/palm.png" alt="Producto 2">
+                <h4>Camisa Palm Print</h4>
+                <p>$499 MXN</p>
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/img/polo.png" alt="Producto 3">
+                <h4>Polo Blanco</h4>
+                <p>$349 MXN</p>
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/img/marca1.png" alt="Producto 4">
+                <h4>Playera Vintage</h4>
+                <p>$279 MXN</p>
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/img/marca2.png" alt="Producto 5">
+                <h4>Jeans Clásicos</h4>
+                <p>$699 MXN</p>
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/img/marca3.png" alt="Producto 6">
+                <h4>Hoodie Estilo Urbano</h4>
+                <p>$559 MXN</p>
+            </div>
         </div>
-        <a href="#" class="ver-mas">Ver más →</a>
+        <!-- Botones navegación -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- Paginación -->
+        <div class="swiper-pagination"></div>
     </div>
+    <a href="#" class="ver-mas">Ver más →</a>
+</div>
+
 
     <div>
         <img src="assets/img/separador.png" class="separador2" alt="barra separadora">
@@ -99,10 +132,7 @@
             <a href="/pages/compras.html" class="btn-comprar">Comprar</a>
             <p class="nota">*T&C compras mayores a $1,497 MXN</p>
         </div>
-        
     </div>
-    
-    
 
     <footer class="footer">
         <div class="footer-container">
@@ -147,9 +177,36 @@
             <p>Términos  •  Privacidad  •  Cookies</p>
         </div>
     </footer>
-    
-    
+
+    <!-- SwiperJS Script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper('.mySwiper', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+          },
+          640: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        }
+      });
+    </script>
+
     <script src="/assets/js/scrpitInicio.js"></script>
-    
 </body>
 </html>
