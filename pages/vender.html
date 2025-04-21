@@ -38,24 +38,34 @@
     <main>
         <section class="formulario">
             <h2>Detalles del Producto</h2>
-            <form>
+            <form id="formularioProducto">
                 <label>Subir Imagen:</label>
-                <input type="file" accept="image/*">
-                
+                <input type="file" id="imagenInput" accept="image/*" required>
+            
                 <label>Nombre del Producto:</label>
-                <input type="text" placeholder="Ej. Sudadera Palm Angels">
-                
+                <input type="text" placeholder="Ej. Sudadera Palm Angels" id="nombre" required>
+            
                 <label>Precio:</label>
-                <input type="number" placeholder="$">
-                
+                <input type="number" placeholder="$" id="precio" required min="1">
+            
                 <label>Ubicación:</label>
-                <input type="text" placeholder="Ciudad, País">
-                
+                <input type="text" placeholder="Ciudad, País" id="ubicacion" required>
+            
+                <label>Categoría:</label>
+                <select id="categoria" required>
+                    <option value="">Selecciona una categoría</option>
+                    <option value="Hombre">Hombre</option>
+                    <option value="Mujer">Mujer</option>
+                    <option value="Sneakers">Sneakers</option>
+                    <option value="Accesorios">Accesorios</option>
+                </select>
+            
                 <label>Descripción:</label>
-                <textarea placeholder="Describe el producto..."></textarea>
-                
+                <textarea placeholder="Describe el producto..." id="descripcion" required></textarea>
+            
                 <button type="submit">Publicar</button>
             </form>
+            
         </section>
         
         <section class="resumen">
@@ -69,5 +79,7 @@
     </main>
 
     
+<script src="/assets/js/vender.js"></script>
+
 </body>
 </html>
