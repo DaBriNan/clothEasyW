@@ -134,24 +134,29 @@
 
 
 
+/*lista debajo de la barra de menu*/
+
 .lista-horizontal {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    gap: 12%;
-    justify-content: center;
-    background-color: rgba(153, 45, 45, 0.021);
+  list-style: none;
+  display: flex;
+  padding: 1%;
+  gap: 12%;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.39);
+  border-radius: 10px ;
+  width: 90%;
+  margin-left: 4%;
 
 }
 
 .lista-horizontal li {
-    color: #FFF;
+  color: #FFF;
 
-    font-family: 'Outfit', sans-serif;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+  font-family: Outfit;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 
 }
 

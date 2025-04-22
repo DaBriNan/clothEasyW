@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mis Favoritos - ClothEasy</title>
+  <link rel="stylesheet" href="/assets/estilos/clotheS.css">
+  <link rel="icon" type="image/x-icon" href="/assets/img/faviconClo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .favoritos-container {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .producto {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      gap: 1rem;
+      background-color: #f8f8f8;
+    }
+    .producto img {
+      width: 100px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="barra-menu">
+    <a href="/index.html">
+      <img src="/assets/img/logoFinal.png" class="imgMenu" alt="Inicio">
+    </a>
+    <div class="barra">
+      <form class="search-bar" action="/buscar" method="get">
+        <input type="text" placeholder="Buscar..." name="q">
+        <button type="submit">Buscar</button>
+      </form>
+    </div>
+    <a href="/pages/vender.html" class="vender"><span class="texto">Vender</span></a>
+    <a href="/pages/compras.html" class="comprar"><span class="textoc">Comprar</span></a>
+    <a href="/pages/paraTi.html" class="paraTi"><span class="textop">Para ti</span></a>
+    <div class="meGusta">
+      <img src="/assets/img/Heart.png" alt="meGusta" class="imagen">
+    </div>
+    <a href="/pages/login.html" class="user">
+      <img src="/assets/img/user.png" alt="login" class="imagen">
+    </a>
+  </header>
+
+  <div class="favoritos-container">
+    <h2>Mis productos favoritos ❤️</h2>
+    <div id="listaFavoritos"></div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h2>CLOTHEASY</h2>
+        <p>REDES SOCIALES</p>
+        <div class="social-icons">
+          <img src="/assets/img/facebook.png" alt="Facebook">
+          <img src="/assets/img/instagram.png" alt="Instagram">
+          <img src="/assets/img/x.png" alt="Email">
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Términos • Privacidad • Cookies</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/favoritos.js"></script>
+  <script src="/assets/js/meGusta.js"></script>
+</body>
+</html>
