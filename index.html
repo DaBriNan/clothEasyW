@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/estilos/clotheS.css">
     <link rel="icon" type="image/x-icon" href="assets/img/logoFinal.png">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -41,6 +42,28 @@
         </a>
 
     </header>
+
+
+    <div class="cart-icon" id="cartIcon">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </div>
+      
+      <div class="cart-container" id="cartContainer">
+        <div class="cart-header">
+            <h2>Tu Carrito</h2>
+            <span class="close-cart" id="closeCart">×</span>
+        </div>
+        <div id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <h3>Total: $<span id="cartTotal">0</span></h3>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Finalizar Compra</button>
+        </div>
+      </div>
+      
+        <div class="overlay" id="overlay"></div>
 
 
     <div class="banner">
@@ -250,6 +273,7 @@
     <script src="/assets/js/productos.js"></script>
     <script src="/assets/js/meGusta.js"></script>
     <script src="/assets/js/favs.js"></script>
+    <script src="/assets/js/buy.js"></script>
 
 </body>
 
