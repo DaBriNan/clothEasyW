@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h3>${prod.name}</h3>
                 <p>$${prod.price} MXN</p>
                 <button class="btn-megusta activo" data-index="${index}">❤️</button>
+                <button class="btn-carrito" data-producto='${JSON.stringify(prod)}'>🛒</button>
             </div>
         `;
         contenedor.appendChild(div);
@@ -30,4 +31,17 @@ document.addEventListener("DOMContentLoaded", () => {
             location.reload(); // Recargar para actualizar la lista
         }
     });
+    if (e.target.classList.contains("btn-carrito")) {
+        const producto = JSON.parse(e.target.dataset.producto);
+        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+        const yaExiste = carrito.some(p => p.name === producto.name);
+        if (!yaExiste) {
+            carrito.push(producto);
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            alert("Producto añadido al carrito");
+        } else {
+            alert("Este producto ya está en el carrito");
+        }
+    }
 });
