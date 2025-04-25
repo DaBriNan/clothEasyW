@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const product = {
             name: slide.querySelector("h4").textContent,
             price: parseFloat(slide.querySelector("p").textContent.replace("$", "").replace(" MXN", "")),
-            image: slide.querySelector("img").getAttribute("src")
+            image: new URL(slide.querySelector("img").getAttribute("src"), window.location.href).pathname
         };
 
         const favs = JSON.parse(localStorage.getItem("meGusta") || "[]");
