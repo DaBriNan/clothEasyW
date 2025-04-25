@@ -1,0 +1,227 @@
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Productos - ClothEasy</title>
+  
+  <link rel="stylesheet" href="/assets/estilos/clotheS.css">
+  <link rel="icon" type="image/x-icon" href="/assets/img/logoFinal.png">
+  <link rel="stylesheet" href="/assets/estilos/productos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+</head>
+<body>
+
+  <header class="barra-menu">
+    <a href="/index.html">
+        <img src="/assets/img/logoFinal.png" class="imgMenu" alt="Inicio">
+    </a>
+    <div class="barra">
+        <form class="search-bar" action="/buscar" method="get">
+            <input type="text" placeholder="Buscar..." name="q">
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+    <a href="/pages/vender.html" class="vender"><span class="texto">Vender</span></a>
+    <a href="/pages/productos.html" class="comprar"><span class="textoc">Comprar</span></a>
+    <a href="/pages/paraTi.html" class="paraTi"><span class="textop">Para ti</span></a>
+    <div class="meGusta">
+        <img src="/assets/img/Heart.png" alt="meGusta" class="imagen">
+    </div>
+    <a href="/pages/login.html" class="user">
+        <img src="/assets/img/user.png" alt="login" class="imagen">
+    </a>
+    
+</header>
+
+<nav class="categorias-menu">
+  <button onclick="filtrarCategoria('todos')">Todos</button>
+  <button onclick="filtrarCategoria('hombre')">Hombre</button>
+  <button onclick="filtrarCategoria('mujer')">Mujer</button>
+  <button onclick="filtrarCategoria('nino')">Niño</button>
+</nav>
+
+
+
+<div class="cart-icon" id="cartIcon">
+  <span class="material-symbols-outlined">shopping_cart</span>
+  <span class="cart-count" id="cartCount">0</span>
+</div>
+
+<div class="cart-container" id="cartContainer">
+  <div class="cart-header">
+      <h2>Tu Carrito</h2>
+      <span class="close-cart" id="closeCart">×</span>
+  </div>
+  <div id="cartItems"></div>
+  <div class="cart-footer">
+      <div class="cart-total">
+          <h3>Total: $<span id="cartTotal">0</span></h3>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn">Finalizar Compra</button>
+  </div>
+</div>
+
+  <div class="overlay" id="overlay"></div>
+
+
+
+
+  <main id="productosContainer" class="productos-grid">
+
+    <div class="producto hombre">
+      <div class="imagen-contenedor">
+      <img src="/assets/img/bufanda.png" alt="Bufanda gris">
+    </div>
+      <h3>Bufanda gris</h3>
+      <p>$230 MXN</p>
+      <p>Talla Adulto</p>
+      <button onclick="addToCart(3,'Bufanda gris', 230, '/assets/img/bufanda.png')">Comprar</button>
+    </div>
+
+    
+    <div class="producto hombre">
+      
+      <div class="imagen-contenedor">
+      <img src="/assets/img/sombreroVaquero.png" alt="sombreroVaquero">
+    </div>
+      <h3>Sombrero Café</h3>
+      <p>$350 MXN</p>
+      <p>Talla 3</p>
+      <button onclick="addToCart(4,'Sombrero café', 350, '/assets/img/sombreroVaquero.png')">Comprar</button>
+    </div>
+  
+
+
+    <div class="producto hombre">
+      <div class="imagen-contenedor">
+      <img src="/assets/img/conjuntoNike.png" alt="conjuntoNike">
+    </div>
+      <h3>Conjunto Nike Azul</h3>
+      <p>$590 MXN</p>
+      <p>Talla G</p>
+      <button onclick="addToCart(5,'Conjunto Nike', 590, '/assets/img/conjuntoNike.png')">Comprar</button>
+    </div>
+
+    <div class="producto mujer">
+      <div class="imagen-contenedor">
+      <img src="/assets/img/tenisPuma.png" alt="Tenis Puma">
+    </div>
+      <h3>Tenis Puma</h3>
+      <p>$450 MXN</p>
+      <p>Talla 24</p>
+      <button onclick="addToCart(6,'Tenis Puma', 450, '/assets/img/tenisPuma.png')">Comprar</button>
+    </div>
+
+    <div class="producto nino">
+      <div class="imagen-contenedor">
+      <img src="/assets/img/hoddieBlanca.png" alt="Sudadera Blanca">
+    </div>
+      <h3>Sudadera Blanca</h3>
+      <p>$100 MXN</p>
+      <p>Talla S</p>
+      <button onclick="addToCart(7,'Sudadera Blanca', 100, '/assets/img/hoddieBlanca.png')">Comprar</button>
+    </div>
+
+    <div class="producto mujer">
+      <div class="imagen-contenedor">
+      <img src="/assets/img/pantalonesRotos.png" alt="pantalonesRotos">
+    </div>
+      <h3>Pantalones Rotos</h3>
+      <p>$325 MXN</p>
+      <p>Talla 32</p>
+      <button onclick="addToCart(8,'Pantalones Rotos', 325, '/assets/img/sombreroVaquero.png')">Comprar</button>
+    </div>
+
+    <div class="producto mujer">
+      <div class="imagen-contenedor">
+      <img src="/assets/img/calcetasRosas.png" alt="calcetasRosas">
+    </div>
+      <h3>Tines Rosas</h3>
+      <p>$50 MXN</p>
+      <p>Talla 23</p>
+      <button onclick="addToCart(8,'Sombrero café', 50, '/assets/img/calcetasRosas.png')">Comprar</button>
+    </div>
+
+
+    <div class="producto hombre">
+      <div class="imagen-contenedor">
+      <img src="/assets/img/corbataNegra.png" alt="corbataNegra">
+    </div>
+      <h3>Corbata Negra</h3>
+      <p>$25 MXN</p>
+      <p>Talla Adulto</p>
+      <button onclick="addToCart(9,'Corbata negra', 25, '/assets/img/corbataNegra.png')">Comprar</button>
+    </div>
+
+    <div class="producto mujer">
+      <div class="imagen-contenedor">
+      <img src="/assets/img/shortGuinda.png" alt="shortGuinda">
+    </div>
+      <h3>Short Guinda</h3>
+      <p>$100 MXN</p>
+      <p>Talla S</p>
+      <button onclick="addToCart(10,'Short guinda', 100, '/assets/img/shortGuinda.png')">Comprar</button>
+    </div>
+
+    <div class="producto mujer">
+      <div class="imagen-contenedor">
+      <img src="/assets/img/chamarraNegra.png" alt="chamarraNegra">
+    </div>
+      <h3>Chamarra Negra</h3>
+      <p>$750 MXN</p>
+      <p>Talla S</p>
+      <button onclick="addToCart(11,'Chamarra Negra', 750, '/assets/img/chamarraNegra.png')">Comprar</button>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <h2>CLOTHEASY</h2>
+            <p>REDES SOCIALES</p>
+            <div class="social-icons">
+                <img src="/assets/img/facebook.png" alt="Facebook">
+                <img src="/assets/img/instagram.png" alt="Instagram">
+                <img src="/assets/img/x.png" alt="Email">
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <h3>COMPRA</h3>
+            <ul>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Precios</a></li>
+                <li><a href="#">Reembolso</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-links">
+            <h3>COMPAÑÍA</h3>
+            <ul>
+                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Noticias</a></li>
+                <li><a href="#">Soporte</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-newsletter">
+            <h3>NO TE PIERDAS LAS OFERTAS</h3>
+            <form>
+                <input type="email" placeholder="Ingresa tu correo">
+                <button type="submit">ENVIAR</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Términos • Privacidad • Cookies</p>
+    </div>
+</footer>
+
+  
+
+  <script src="/assets/js/buy.js"></script>
+</body>
+</html>
