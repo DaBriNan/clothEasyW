@@ -581,11 +581,21 @@ body {
     font-size: 12px;
 }
 
-.imgMenu{
-    left: 50px;
-    display: block;
-    height: 50px
+.imgMenu {
+  left: 50px;
+  display: block;
+  height: 50px;
+  width: 200px;
+  animation: rotateYWithPause 10s infinite; /* 5s animación + 2s pausa */
+  transform-style: preserve-3d;
 }
+
+@keyframes rotateYWithPause {
+  0% { transform: rotateY(0deg); }
+  71.4% { transform: rotateY(360deg); } /* 5s de animación (5/7 = ~71.4%) */
+  100% { transform: rotateY(360deg); } /* mantener posición 2s */
+}
+   
 
 a{
     text-decoration: none;
