@@ -295,38 +295,35 @@ a{
 }
 
 
-/* barra-horizontal */
-.barra-horizontal {
+.categorias-menu button.activo {
+  font-family: Outfit;
+  background-color: #363446;
+  color: white;
+  /* font-weight: bold; */
+}
+
+.categorias-menu {
+  margin: 0%;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px;
   background-color: #aa7ddd48;
-  padding: 1.2rem 2rem;
-  margin-top: 1rem;
-  border-radius: 50px;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #ccc;
 }
 
-.barra-horizontal ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
+.categorias-menu button {
+  padding: 10px 20px;
+  background-color: #eee;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-.barra-horizontal li a {
-  color: white !important; 
-  font-size: 1.3rem; 
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  transition: all 0.3s ease;
-}
-
-.barra-horizontal li a:hover {
-  color: #6A65C6 !important;
-  transform: scale(1.05);
+.categorias-menu button:hover {
+  background-color: #ccc;
 }
 
   /* Icono del carrito */
