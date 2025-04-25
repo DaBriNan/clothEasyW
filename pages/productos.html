@@ -34,6 +34,14 @@
     
 </header>
 
+<nav class="categorias-menu">
+  <button onclick="filtrarCategoria('todos')">Todos</button>
+  <button onclick="filtrarCategoria('hombre')">Hombre</button>
+  <button onclick="filtrarCategoria('mujer')">Mujer</button>
+  <button onclick="filtrarCategoria('nino')">Niño</button>
+</nav>
+
+
 
 <div class="cart-icon" id="cartIcon">
   <span class="material-symbols-outlined">shopping_cart</span>
@@ -61,7 +69,7 @@
 
   <main id="productosContainer" class="productos-grid">
 
-    <div class="producto">
+    <div class="producto hombre">
       <div class="imagen-contenedor">
       <img src="/assets/img/bufanda.png" alt="Bufanda gris">
     </div>
@@ -71,8 +79,9 @@
       <button onclick="addToCart(3,'Bufanda gris', 230, '/assets/img/bufanda.png')">Comprar</button>
     </div>
 
-   
-    <div class="producto">
+    
+    <div class="producto hombre">
+      
       <div class="imagen-contenedor">
       <img src="/assets/img/sombreroVaquero.png" alt="sombreroVaquero">
     </div>
@@ -81,9 +90,10 @@
       <p>Talla 3</p>
       <button onclick="addToCart(4,'Sombrero café', 350, '/assets/img/sombreroVaquero.png')">Comprar</button>
     </div>
+  
 
 
-    <div class="producto">
+    <div class="producto hombre">
       <div class="imagen-contenedor">
       <img src="/assets/img/conjuntoNike.png" alt="conjuntoNike">
     </div>
@@ -93,7 +103,7 @@
       <button onclick="addToCart(5,'Conjunto Nike', 590, '/assets/img/conjuntoNike.png')">Comprar</button>
     </div>
 
-    <div class="producto">
+    <div class="producto mujer">
       <div class="imagen-contenedor">
       <img src="/assets/img/tenisPuma.png" alt="Tenis Puma">
     </div>
@@ -103,7 +113,7 @@
       <button onclick="addToCart(6,'Tenis Puma', 450, '/assets/img/tenisPuma.png')">Comprar</button>
     </div>
 
-    <div class="producto">
+    <div class="producto nino">
       <div class="imagen-contenedor">
       <img src="/assets/img/hoddieBlanca.png" alt="Sudadera Blanca">
     </div>
@@ -113,7 +123,7 @@
       <button onclick="addToCart(7,'Sudadera Blanca', 100, '/assets/img/hoddieBlanca.png')">Comprar</button>
     </div>
 
-    <div class="producto">
+    <div class="producto mujer">
       <div class="imagen-contenedor">
       <img src="/assets/img/pantalonesRotos.png" alt="pantalonesRotos">
     </div>
@@ -123,7 +133,7 @@
       <button onclick="addToCart(8,'Pantalones Rotos', 325, '/assets/img/sombreroVaquero.png')">Comprar</button>
     </div>
 
-    <div class="producto">
+    <div class="producto mujer">
       <div class="imagen-contenedor">
       <img src="/assets/img/calcetasRosas.png" alt="calcetasRosas">
     </div>
@@ -134,7 +144,7 @@
     </div>
 
 
-    <div class="producto">
+    <div class="producto hombre">
       <div class="imagen-contenedor">
       <img src="/assets/img/corbataNegra.png" alt="corbataNegra">
     </div>
@@ -144,7 +154,7 @@
       <button onclick="addToCart(9,'Corbata negra', 25, '/assets/img/corbataNegra.png')">Comprar</button>
     </div>
 
-    <div class="producto">
+    <div class="producto mujer">
       <div class="imagen-contenedor">
       <img src="/assets/img/shortGuinda.png" alt="shortGuinda">
     </div>
@@ -154,7 +164,7 @@
       <button onclick="addToCart(10,'Short guinda', 100, '/assets/img/shortGuinda.png')">Comprar</button>
     </div>
 
-    <div class="producto">
+    <div class="producto mujer">
       <div class="imagen-contenedor">
       <img src="/assets/img/chamarraNegra.png" alt="chamarraNegra">
     </div>
@@ -164,10 +174,51 @@
       <button onclick="addToCart(11,'Chamarra Negra', 750, '/assets/img/chamarraNegra.png')">Comprar</button>
     </div>
 
-    
-
-    
   </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <h2>CLOTHEASY</h2>
+            <p>REDES SOCIALES</p>
+            <div class="social-icons">
+                <img src="/assets/img/facebook.png" alt="Facebook">
+                <img src="/assets/img/instagram.png" alt="Instagram">
+                <img src="/assets/img/x.png" alt="Email">
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <h3>COMPRA</h3>
+            <ul>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Precios</a></li>
+                <li><a href="#">Reembolso</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-links">
+            <h3>COMPAÑÍA</h3>
+            <ul>
+                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Noticias</a></li>
+                <li><a href="#">Soporte</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-newsletter">
+            <h3>NO TE PIERDAS LAS OFERTAS</h3>
+            <form>
+                <input type="email" placeholder="Ingresa tu correo">
+                <button type="submit">ENVIAR</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Términos • Privacidad • Cookies</p>
+    </div>
+</footer>
 
   
 

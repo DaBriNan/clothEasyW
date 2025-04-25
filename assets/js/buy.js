@@ -149,15 +149,15 @@ function updateCartUI() {
     });
 }
 
-// Finalizar compra
-function checkout() {
-    alert('¡Gracias por tu compra! Total: $' + cart.total);
-    cart.items = [];
-    cart.total = 0;
-    updateCartUI();
-    saveCart();
-    closeCartFunc();
-}
+// // Finalizar compra
+// function checkout() {
+//     alert('¡Gracias por tu compra! Total: $' + cart.total);
+//     cart.items = [];
+//     cart.total = 0;
+//     updateCartUI();
+//     saveCart();
+//     closeCartFunc();
+// }
 
 // Event Listeners
 //cartIcon.addEventListener('click', openCart);
@@ -183,6 +183,40 @@ overlay.addEventListener("click", () => {
 });
 
 
+function filtrarCategoria(categoria) {
+    const productos = document.querySelectorAll('.producto');
+    const botones = document.querySelectorAll('.categorias-menu button');
+  
+    // Mostrar/ocultar productos según categoría
+    productos.forEach(producto => {
+      if (categoria === 'todos' || producto.classList.contains(categoria)) {
+        producto.style.display = 'block';
+      } else {
+        producto.style.display = 'none';
+      }
+    });
+  
+    // Quitar clase activa de todos los botones
+    botones.forEach(boton => boton.classList.remove('activo'));
+  
+    // Agregar clase activa al botón seleccionado
+    const botonActivo = document.querySelector(`.categorias-menu button[onclick*="${categoria}"]`);
+    if (botonActivo) {
+      botonActivo.classList.add('activo');
+    }
+  }
+
+  //nos marca por defecto la opcion de todos remarcada
+  window.addEventListener('DOMContentLoaded', () => {
+    filtrarCategoria('todos');
+  });
+    
+  
+
+  document.getElementById('checkoutBtn').addEventListener('click', () => {
+    window.location.href = 'compras.html'; 
+  });
+  
 
 
 checkoutBtn.addEventListener('click', checkout);
