@@ -216,6 +216,11 @@ body {
     color: #333;
     
 }
+.meGusta .imagen,
+.user .imagen {
+  width: 40px;
+  height: 40px;
+}
 
 .azul {
     background: linear-gradient(105deg, #8781FF 12.17%, #6A65C8 38.22%, #514D99 49.17%);
