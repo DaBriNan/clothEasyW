@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="/assets/estilos/paraTi.css" />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/img/faviconClo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 <body>
 
@@ -16,10 +26,15 @@
         <a href="/index.html">
             <img src="/assets/img/logoFinal.png" class="imgMenu" alt="Inicio" />
         </a>
-        <div class="barra">
-            <form class="search-bar" action="/buscar" method="get">
-                <input type="text" placeholder="Buscar..." name="q" />
-                <button type="submit">Buscar</button>
+        <div class="container">
+      
+            <form action="" class="search-form">
+              <input type="text" placeholder="Buscar..." class="search-input" />
+      
+              <div class="search-button">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <i class="fa-solid fa-xmark search-close"></i>
+              </div>
             </form>
         </div>
         <a href="/pages/vender.html" class="vender"><span class="texto">Vender</span></a>
@@ -126,6 +141,49 @@
 
     <script src="/assets/js/log.js"></script>
     <script src="/assets/js/buy.js"></script>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>CLOTHEASY</h2>
+                <p>REDES SOCIALES</p>
+                <div class="social-icons">
+                    <img src="assets/img/facebook.png" alt="Facebook">
+                    <img src="assets/img/instagram.png" alt="Instagram">
+                    <img src="assets/img/x.png" alt="Email">
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>COMPRA</h3>
+                <ul>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Precios</a></li>
+                    <li><a href="#">Reembolso</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>COMPAÑÍA</h3>
+                <ul>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Noticias</a></li>
+                    <li><a href="#">Soporte</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-newsletter">
+                <h3>NO TE PIERDAS LAS OFERTAS</h3>
+                <form>
+                    <input type="email" placeholder="Ingresa tu correo">
+                    <button type="submit">ENVIAR</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Términos • Privacidad • Cookies</p>
+        </div>
+    </footer>
     
 </body>
 </html>
