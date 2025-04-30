@@ -217,7 +217,39 @@ function filtrarCategoria(categoria) {
     window.location.href = 'compras.html'; 
   });
   
+////////modal
+document.getElementById("finalizarCompraBtn").addEventListener("click", () => {
+    const modal = document.getElementById("modalCompra");
+    const resumenDiv = document.getElementById("resumenCompra");
 
+    const cart = JSON.parse(localStorage.getItem("cart")) || { items: [], total: 0 }; // ← Aquí corregimos
+
+    if (cart.items.length === 0) {
+      alert("Tu carrito está vacío.");
+      return;
+    }
+
+    // Limpiar el resumen anterior
+    resumenDiv.innerHTML = "";
+
+    cart.items.forEach(item => {
+        const resumenItem = document.createElement("p");
+        const subtotal = item.price * item.quantity;
+        resumenItem.textContent = `${item.name} x${item.quantity} - $${subtotal.toFixed(2)}`;
+        resumenDiv.appendChild(resumenItem);
+    });
+
+    // Mostrar el total
+    const totalElement = document.createElement("h4");
+    totalElement.textContent = `Total a pagar: $${cart.total.toFixed(2)}`;
+    resumenDiv.appendChild(totalElement);
+
+    modal.style.display = "block";
+});
+
+
+
+  
 
 checkoutBtn.addEventListener('click', checkout);
 

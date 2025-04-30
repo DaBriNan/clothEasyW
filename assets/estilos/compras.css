@@ -6,12 +6,9 @@
   }
   
   body {
-    background: linear-gradient(to bottom, #F6C1A7 0%, #E2DFDF 100%)
-    
-  }
-  body{
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
+    background: linear-gradient(to bottom, #F6C1A7 0%, #E2DFDF 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
   .imgMenu {
     height: 150px !important;
@@ -499,42 +496,7 @@
     background-color: #218838;
   }
   
-  .resumen {
-    flex: 1;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    height: fit-content;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
-  
-  .resumen .precio {
-    font-weight: bold;
-  }
-  
-  .resumen .gratis {
-    color: green;
-    font-weight: bold;
-  }
-  
-  .metodos-pago {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .metodos-pago button {
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    background-color: #ddd;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  .metodos-pago button:hover {
-    background-color: #ccc;
-  }
+
   
   /* Título principal */
   h1 {
@@ -561,3 +523,158 @@
   a{
     text-decoration: none;
 }
+
+
+
+/* .modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-contenido {
+  background: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.cerrar {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.boton-finalizar {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+} */
+.datos-envio {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  font-family: 'Outfit', sans-serif;
+}
+
+.datos-envio h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #4CAF50;
+}
+
+.btn-enviar {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+  background-color: #388e3c;
+}
+
+.compra-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 0 40px;
+  justify-content: space-between;
+}
+
+#resumenContainer {
+  flex: 1;
+  min-width: 300px;
+}
+
+.datos-envio {
+  flex: 1;
+  min-width: 300px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.datos-envio h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #3f51b5;
+}
+
+.datos-envio .form-group {
+  margin-bottom: 15px;
+}
+
+.datos-envio label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.datos-envio input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-enviar {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-enviar:hover {
+  background-color: #2c3e90;
+}
+  
