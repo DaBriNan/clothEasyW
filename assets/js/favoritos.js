@@ -1,47 +1,81 @@
 document.addEventListener("DOMContentLoaded", () => {
     const contenedor = document.getElementById("listaFavoritos");
-    let favoritos = JSON.parse(localStorage.getItem("meGusta")) || [];
+    
+    // Obtener favoritos con verificación robusta
+    let favoritos = [];
+    try {
+        const favoritosGuardados = localStorage.getItem("meGusta");
+        if (favoritosGuardados) {
+            favoritos = JSON.parse(favoritosGuardados);
+            
+            // Filtrar productos inválidos o null
+            favoritos = favoritos.filter(producto => {
+                return producto && 
+                       typeof producto === 'object' && 
+                       producto.id && 
+                       producto.name && 
+                       producto.price !== undefined && 
+                       producto.image;
+            });
+            
+            // Actualizar localStorage solo con productos válidos
+            localStorage.setItem("meGusta", JSON.stringify(favoritos));
+        }
+    } catch (error) {
+        console.error("Error al leer favoritos:", error);
+        localStorage.removeItem("meGusta");
+    }
 
-    if (favoritos.length === 0) {
-        contenedor.innerHTML = "<p>No has marcado ningún producto como favorito.</p>";
+    if (!contenedor) return;
+
+    // Mostrar mensaje si no hay favoritos
+    if (!favoritos || favoritos.length === 0) {
+        contenedor.innerHTML = `
+            <div class="empty-favorites">
+                <img src="/assets/img/empty-heart.png" alt="Corazón vacío">
+                <p>Aún no tienes productos favoritos</p>
+                <a href="/pages/productos.html" class="btn-explorar">Explorar productos</a>
+            </div>
+        `;
         return;
     }
 
-    favoritos.forEach((prod, index) => {
-        const div = document.createElement("div");
-        div.classList.add("producto");
-        div.innerHTML = `
-            <img src="${prod.image}" alt="${prod.name}">
-            <div>
-                <h3>${prod.name}</h3>
-                <p>$${prod.price} MXN</p>
-                <button class="btn-megusta activo" data-index="${index}">❤️</button>
-                <button class="btn-carrito" data-producto='${JSON.stringify(prod)}'>🛒</button>
+    // Mostrar favoritos válidos
+    contenedor.innerHTML = favoritos.map(producto => `
+        <div class="producto-favorito">
+            <img src="${producto.image}" alt="${producto.name}" onerror="this.src='/assets/img/placeholder.jpg'">
+            <div class="info-favorito">
+                <h3>${producto.name}</h3>
+                <p>$${producto.price} MXN</p>
             </div>
-        `;
-        contenedor.appendChild(div);
-    });
+            <button class="btn-eliminar" data-id="${producto.id}">
+                <span class="material-symbols-outlined">delete</span>
+            </button>
+        </div>
+    `).join('');
 
-    // Event delegation para eliminar favoritos
+    // Manejar eliminación
     contenedor.addEventListener("click", (e) => {
-        if (e.target.classList.contains("btn-megusta")) {
-            const index = e.target.dataset.index;
-            favoritos.splice(index, 1);
+        if (e.target.closest(".btn-eliminar")) {
+            const btn = e.target.closest(".btn-eliminar");
+            const productId = btn.getAttribute('data-id');
+            
+            favoritos = favoritos.filter(item => item.id !== productId);
             localStorage.setItem("meGusta", JSON.stringify(favoritos));
-            location.reload(); // Recargar para actualizar la lista
+            
+            // Eliminar visualmente
+            btn.closest(".producto-favorito").remove();
+            
+            // Mostrar estado vacío si no quedan favoritos
+            if (favoritos.length === 0) {
+                contenedor.innerHTML = `
+                    <div class="empty-favorites">
+                        <img src="/assets/img/empty-heart.png" alt="Corazón vacío">
+                        <p>No tienes productos favoritos</p>
+                        <a href="/pages/productos.html" class="btn-explorar">Explorar productos</a>
+                    </div>
+                `;
+            }
         }
     });
-    if (e.target.classList.contains("btn-carrito")) {
-        const producto = JSON.parse(e.target.dataset.producto);
-        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-        const yaExiste = carrito.some(p => p.name === producto.name);
-        if (!yaExiste) {
-            carrito.push(producto);
-            localStorage.setItem("carrito", JSON.stringify(carrito));
-            alert("Producto añadido al carrito");
-        } else {
-            alert("Este producto ya está en el carrito");
-        }
-    }
 });

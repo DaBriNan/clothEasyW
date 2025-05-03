@@ -284,6 +284,56 @@
         });
     </script>
 
+<script>
+    // Función para manejar el "Me Gusta"
+    document.addEventListener("DOMContentLoaded", function() {
+      const botonesMeGusta = document.querySelectorAll(".btn-megusta");
+      
+      // Verificar favoritos al cargar la página
+      let favoritos = JSON.parse(localStorage.getItem("meGusta")) || [];
+      
+      botonesMeGusta.forEach(btn => {
+        const productId = btn.getAttribute('data-id');
+        
+        // Marcar como activo si ya está en favoritos
+        if (favoritos.some(p => p.id === productId)) {
+          btn.classList.add("activo");
+        }
+        
+        // Manejar clic en el botón
+        btn.addEventListener("click", function() {
+          const product = {
+            id: btn.getAttribute('data-id'),
+            name: btn.getAttribute('data-name'),
+            price: btn.getAttribute('data-price'),
+            image: btn.getAttribute('data-image')
+          };
+          
+          let favoritos = JSON.parse(localStorage.getItem("meGusta")) || [];
+          const existeIndex = favoritos.findIndex(p => p.id === product.id);
+          
+          if (existeIndex === -1) {
+            // Añadir a favoritos
+            favoritos.push(product);
+            btn.classList.add("activo");
+          } else {
+            // Quitar de favoritos
+            favoritos.splice(existeIndex, 1);
+            btn.classList.remove("activo");
+          }
+          
+          localStorage.setItem("meGusta", JSON.stringify(favoritos));
+        });
+      });
+      
+      // Función para añadir al carrito (simulada)
+      window.addToCart = function(id, name, price, image) {
+        alert(`Producto ${name} añadido al carrito`);
+        // Aquí iría la lógica real para añadir al carrito
+      };
+    });
+  </script>
+
     <script src="/assets/js/scrpitInicio.js"></script>
     <script src="/assets/js/productos.js"></script>
     <script src="/assets/js/meGusta.js"></script>

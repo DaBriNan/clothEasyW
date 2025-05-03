@@ -1,17 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const botonesMeGusta = document.querySelectorAll(".btn-megusta");
+    const botonesMeGusta = document.querySelectorAll(".producto .btn-megusta");
+    let favoritos = JSON.parse(localStorage.getItem("meGusta")) || [];
 
-    botonesMeGusta.forEach((btn, index) => {
+    botonesMeGusta.forEach(btn => {
+        const productId = btn.getAttribute('data-id');
+        const isFavorito = favoritos.some(item => item.id === productId);
+
+        // Establecer estado inicial del botón
+        btn.classList.toggle("activo", isFavorito);
+
         btn.addEventListener("click", () => {
-            const producto = productos[index];
-            let favoritos = JSON.parse(sessionStorage.getItem("favoritos")) || [];
+            const product = {
+                id: productId,
+                name: btn.getAttribute('data-name'),
+                price: parseFloat(btn.getAttribute('data-price')),
+                image: btn.getAttribute('data-image')
+            };
 
-            const existe = favoritos.find(p => p.id === producto.id);
-            if (!existe) {
-                favoritos.push(producto);
-                sessionStorage.setItem("favoritos", JSON.stringify(favoritos));
+            let favoritos = JSON.parse(localStorage.getItem("meGusta")) || [];
+            const index = favoritos.findIndex(item => item.id === productId);
+
+            if (index === -1) {
+                // Añadir a favoritos
+                favoritos.push(product);
                 btn.classList.add("activo");
+            } else {
+                // Quitar de favoritos
+                favoritos.splice(index, 1);
+                btn.classList.remove("activo");
             }
+
+            localStorage.setItem("meGusta", JSON.stringify(favoritos));
         });
     });
 });
