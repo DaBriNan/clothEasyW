@@ -1,21 +1,48 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Productos - ClothEasy</title>
-  
   <link rel="stylesheet" href="/assets/estilos/clotheS.css">
   <link rel="icon" type="image/x-icon" href="/assets/img/logoFinal.png">
   <link rel="stylesheet" href="/assets/estilos/productos.css">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="assets/img/faviconClo.png">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .btn-megusta {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      padding: 5px;
+    }
+    .btn-megusta.activo {
+      color: red;
+    }
+    .productos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .producto {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+    }
+    .producto img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .producto button {
+      margin: 5px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
@@ -24,172 +51,175 @@
         <img src="/assets/img/logoFinal.png" class="imgMenu" alt="Inicio">
     </a>
     <div class="container">
-      
       <form action="" class="search-form">
         <input type="text" placeholder="Buscar..." class="search-input" />
-
         <div class="search-button">
           <i class="fa-solid fa-magnifying-glass search-icon"></i>
           <i class="fa-solid fa-xmark search-close"></i>
         </div>
       </form>
-  </div>
+    </div>
     <a href="/pages/vender.html" class="vender"><span class="texto">Vender</span></a>
     <a href="/pages/productos.html" class="comprar"><span class="textoc">Comprar</span></a>
     <a href="/pages/paraTi.html" class="paraTi"><span class="textop">Para ti</span></a>
-    <div class="meGusta">
-        <img src="/assets/img/Heart.png" alt="meGusta" class="imagen">
-    </div>
+    <a href="/pages/meGusta.html" class="meGusta">
+      <img src="/assets/img/Heart.png" alt="meGusta" class="imagen">
+    </a>
     <a href="/pages/login.html" class="user">
         <img src="/assets/img/user.png" alt="login" class="imagen">
     </a>
-    
-</header>
+  </header>
 
-<nav class="categorias-menu">
-  <button onclick="filtrarCategoria('todos')">Todos</button>
-  <button onclick="filtrarCategoria('hombre')">Hombre</button>
-  <button onclick="filtrarCategoria('mujer')">Mujer</button>
-  <button onclick="filtrarCategoria('nino')">Niño</button>
-</nav>
+  <nav class="categorias-menu">
+    <button onclick="filtrarCategoria('todos')">Todos</button>
+    <button onclick="filtrarCategoria('hombre')">Hombre</button>
+    <button onclick="filtrarCategoria('mujer')">Mujer</button>
+    <button onclick="filtrarCategoria('nino')">Niño</button>
+  </nav>
 
-
-
-<div class="cart-icon" id="cartIcon">
-  <span class="material-symbols-outlined">shopping_cart</span>
-  <span class="cart-count" id="cartCount">0</span>
-</div>
-
-<div class="cart-container" id="cartContainer">
-  <div class="cart-header">
-      <h2>Tu Carrito</h2>
-      <span class="close-cart" id="closeCart">×</span>
+  <div class="cart-icon" id="cartIcon">
+    <span class="material-symbols-outlined">shopping_cart</span>
+    <span class="cart-count" id="cartCount">0</span>
   </div>
-  <div id="cartItems"></div>
-  <div class="cart-footer">
-      <div class="cart-total">
-          <h3>Total: $<span id="cartTotal">0</span></h3>
-      </div>
-      <button class="checkout-btn" id="checkoutBtn">Finalizar Compra</button>
+
+  <div class="cart-container" id="cartContainer">
+    <div class="cart-header">
+        <h2>Tu Carrito</h2>
+        <span class="close-cart" id="closeCart">×</span>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart-footer">
+        <div class="cart-total">
+            <h3>Total: $<span id="cartTotal">0</span></h3>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">Finalizar Compra</button>
+    </div>
   </div>
-</div>
 
   <div class="overlay" id="overlay"></div>
 
-
-
-
   <main id="productosContainer" class="productos-grid">
-
+    <!-- Producto 1 -->
     <div class="producto hombre">
       <div class="imagen-contenedor">
-      <img src="/assets/img/bufanda.png" alt="Bufanda gris">
-    </div>
+        <img src="/assets/img/bufanda.png" alt="Bufanda gris">
+      </div>
       <h3>Bufanda gris</h3>
       <p>$230 MXN</p>
       <p>Talla Adulto</p>
-      <button onclick="addToCart(3,'Bufanda gris', 230, '/assets/img/bufanda.png')">Comprar</button>
+      <button class="btn-megusta" data-id="1" data-name="Bufanda gris" data-price="230" data-image="/assets/img/bufanda.png">❤️</button>
+      <button onclick="addToCart(1,'Bufanda gris', 230, '/assets/img/bufanda.png')">Comprar</button>
     </div>
 
-    
+    <!-- Producto 2 -->
     <div class="producto hombre">
-      
       <div class="imagen-contenedor">
-      <img src="/assets/img/sombreroVaquero.png" alt="sombreroVaquero">
-    </div>
+        <img src="/assets/img/sombreroVaquero.png" alt="Sombrero Café">
+      </div>
       <h3>Sombrero Café</h3>
       <p>$350 MXN</p>
       <p>Talla 3</p>
-      <button onclick="addToCart(4,'Sombrero café', 350, '/assets/img/sombreroVaquero.png')">Comprar</button>
+      <button class="btn-megusta" data-id="2" data-name="Sombrero Café" data-price="350" data-image="/assets/img/sombreroVaquero.png">❤️</button>
+      <button onclick="addToCart(2,'Sombrero Café', 350, '/assets/img/sombreroVaquero.png')">Comprar</button>
     </div>
-  
 
-
+    <!-- Producto 3 -->
     <div class="producto hombre">
       <div class="imagen-contenedor">
-      <img src="/assets/img/conjuntoNike.png" alt="conjuntoNike">
-    </div>
+        <img src="/assets/img/conjuntoNike.png" alt="Conjunto Nike Azul">
+      </div>
       <h3>Conjunto Nike Azul</h3>
       <p>$590 MXN</p>
       <p>Talla G</p>
-      <button onclick="addToCart(5,'Conjunto Nike', 590, '/assets/img/conjuntoNike.png')">Comprar</button>
+      <button class="btn-megusta" data-id="3" data-name="Conjunto Nike Azul" data-price="590" data-image="/assets/img/conjuntoNike.png">❤️</button>
+      <button onclick="addToCart(3,'Conjunto Nike Azul', 590, '/assets/img/conjuntoNike.png')">Comprar</button>
     </div>
 
+    <!-- Producto 4 -->
     <div class="producto mujer">
       <div class="imagen-contenedor">
-      <img src="/assets/img/tenisPuma.png" alt="Tenis Puma">
-    </div>
+        <img src="/assets/img/tenisPuma.png" alt="Tenis Puma">
+      </div>
       <h3>Tenis Puma</h3>
       <p>$450 MXN</p>
       <p>Talla 24</p>
-      <button onclick="addToCart(6,'Tenis Puma', 450, '/assets/img/tenisPuma.png')">Comprar</button>
+      <button class="btn-megusta" data-id="4" data-name="Tenis Puma" data-price="450" data-image="/assets/img/tenisPuma.png">❤️</button>
+      <button onclick="addToCart(4,'Tenis Puma', 450, '/assets/img/tenisPuma.png')">Comprar</button>
     </div>
 
+    <!-- Producto 5 -->
     <div class="producto nino">
       <div class="imagen-contenedor">
-      <img src="/assets/img/hoddieBlanca.png" alt="Sudadera Blanca">
-    </div>
+        <img src="/assets/img/hoddieBlanca.png" alt="Sudadera Blanca">
+      </div>
       <h3>Sudadera Blanca</h3>
       <p>$100 MXN</p>
       <p>Talla S</p>
-      <button onclick="addToCart(7,'Sudadera Blanca', 100, '/assets/img/hoddieBlanca.png')">Comprar</button>
+      <button class="btn-megusta" data-id="5" data-name="Sudadera Blanca" data-price="100" data-image="/assets/img/hoddieBlanca.png">❤️</button>
+      <button onclick="addToCart(5,'Sudadera Blanca', 100, '/assets/img/hoddieBlanca.png')">Comprar</button>
     </div>
 
+    <!-- Producto 6 -->
     <div class="producto mujer">
       <div class="imagen-contenedor">
-      <img src="/assets/img/pantalonesRotos.png" alt="pantalonesRotos">
-    </div>
+        <img src="/assets/img/pantalonesRotos.png" alt="Pantalones Rotos">
+      </div>
       <h3>Pantalones Rotos</h3>
       <p>$325 MXN</p>
       <p>Talla 32</p>
-      <button onclick="addToCart(8,'Pantalones Rotos', 325, '/assets/img/pantalonesRotos.png')">Comprar</button>
+      <button class="btn-megusta" data-id="6" data-name="Pantalones Rotos" data-price="325" data-image="/assets/img/pantalonesRotos.png">❤️</button>
+      <button onclick="addToCart(6,'Pantalones Rotos', 325, '/assets/img/pantalonesRotos.png')">Comprar</button>
     </div>
 
+    <!-- Producto 7 -->
     <div class="producto mujer">
       <div class="imagen-contenedor">
-      <img src="/assets/img/calcetasRosas.png" alt="calcetasRosas">
-    </div>
+        <img src="/assets/img/calcetasRosas.png" alt="Tines Rosas">
+      </div>
       <h3>Tines Rosas</h3>
       <p>$50 MXN</p>
       <p>Talla 23</p>
-      <button onclick="addToCart(9,'Tines rosas', 50, '/assets/img/calcetasRosas.png')">Comprar</button>
+      <button class="btn-megusta" data-id="7" data-name="Tines Rosas" data-price="50" data-image="/assets/img/calcetasRosas.png">❤️</button>
+      <button onclick="addToCart(7,'Tines Rosas', 50, '/assets/img/calcetasRosas.png')">Comprar</button>
     </div>
 
-
+    <!-- Producto 8 -->
     <div class="producto hombre">
       <div class="imagen-contenedor">
-      <img src="/assets/img/corbataNegra.png" alt="corbataNegra">
-    </div>
+        <img src="/assets/img/corbataNegra.png" alt="Corbata Negra">
+      </div>
       <h3>Corbata Negra</h3>
       <p>$25 MXN</p>
       <p>Talla Adulto</p>
-      <button onclick="addToCart(10,'Corbata negra', 25, '/assets/img/corbataNegra.png')">Comprar</button>
+      <button class="btn-megusta" data-id="8" data-name="Corbata Negra" data-price="25" data-image="/assets/img/corbataNegra.png">❤️</button>
+      <button onclick="addToCart(8,'Corbata Negra', 25, '/assets/img/corbataNegra.png')">Comprar</button>
     </div>
 
+    <!-- Producto 9 -->
     <div class="producto mujer">
       <div class="imagen-contenedor">
-      <img src="/assets/img/shortGuinda.png" alt="shortGuinda">
-    </div>
+        <img src="/assets/img/shortGuinda.png" alt="Short Guinda">
+      </div>
       <h3>Short Guinda</h3>
       <p>$100 MXN</p>
       <p>Talla S</p>
-      <button onclick="addToCart(11,'Short guinda', 100, '/assets/img/shortGuinda.png')">Comprar</button>
+      <button class="btn-megusta" data-id="9" data-name="Short Guinda" data-price="100" data-image="/assets/img/shortGuinda.png">❤️</button>
+      <button onclick="addToCart(9,'Short Guinda', 100, '/assets/img/shortGuinda.png')">Comprar</button>
     </div>
 
+    <!-- Producto 10 -->
     <div class="producto mujer">
       <div class="imagen-contenedor">
-      <img src="/assets/img/chamarraNegra.png" alt="chamarraNegra">
-    </div>
+        <img src="/assets/img/chamarraNegra.png" alt="Chamarra Negra">
+      </div>
       <h3>Chamarra Negra</h3>
       <p>$750 MXN</p>
       <p>Talla S</p>
-      <button onclick="addToCart(12,'Chamarra Negra', 750, '/assets/img/chamarraNegra.png')">Comprar</button>
+      <button class="btn-megusta" data-id="10" data-name="Chamarra Negra" data-price="750" data-image="/assets/img/chamarraNegra.png">❤️</button>
+      <button onclick="addToCart(10,'Chamarra Negra', 750, '/assets/img/chamarraNegra.png')">Comprar</button>
     </div>
-    <br>
   </main>
 
-  <br>
-  
   <footer class="footer">
     <div class="footer-container">
         <div class="footer-logo">
@@ -232,11 +262,56 @@
     <div class="footer-bottom">
         <p>Términos • Privacidad • Cookies</p>
     </div>
-</footer>
+  </footer>
 
-  
-
-  <script src="/assets/js/buy.js"></script>
-  <script src="/assets/js/scrpitInicio.js"></script>
+  <script>
+    // Función para manejar el "Me Gusta"
+    document.addEventListener("DOMContentLoaded", function() {
+      const botonesMeGusta = document.querySelectorAll(".btn-megusta");
+      
+      // Verificar favoritos al cargar la página
+      let favoritos = JSON.parse(localStorage.getItem("meGusta")) || [];
+      
+      botonesMeGusta.forEach(btn => {
+        const productId = btn.getAttribute('data-id');
+        
+        // Marcar como activo si ya está en favoritos
+        if (favoritos.some(p => p.id === productId)) {
+          btn.classList.add("activo");
+        }
+        
+        // Manejar clic en el botón
+        btn.addEventListener("click", function() {
+          const product = {
+            id: btn.getAttribute('data-id'),
+            name: btn.getAttribute('data-name'),
+            price: btn.getAttribute('data-price'),
+            image: btn.getAttribute('data-image')
+          };
+          
+          let favoritos = JSON.parse(localStorage.getItem("meGusta")) || [];
+          const existeIndex = favoritos.findIndex(p => p.id === product.id);
+          
+          if (existeIndex === -1) {
+            // Añadir a favoritos
+            favoritos.push(product);
+            btn.classList.add("activo");
+          } else {
+            // Quitar de favoritos
+            favoritos.splice(existeIndex, 1);
+            btn.classList.remove("activo");
+          }
+          
+          localStorage.setItem("meGusta", JSON.stringify(favoritos));
+        });
+      });
+      
+      // Función para añadir al carrito (simulada)
+      window.addToCart = function(id, name, price, image) {
+        alert(`Producto ${name} añadido al carrito`);
+        // Aquí iría la lógica real para añadir al carrito
+      };
+    });
+  </script>
 </body>
 </html>
