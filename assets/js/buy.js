@@ -255,3 +255,5 @@ checkoutBtn.addEventListener('click', checkout);
 
 // Cargar carrito al iniciar
 document.addEventListener('DOMContentLoaded', loadCart);
+
+
