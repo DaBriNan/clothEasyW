@@ -98,129 +98,10 @@
 
   <div class="overlay" id="overlay"></div>
 
-  <main id="productosContainer" class="productos-grid">
-    
-    <div class="producto hombre">
-      <div class="imagen-contenedor">
-        <img src="/assets/img/bufanda.png" alt="Bufanda gris">
-      </div>
-      <h3>Bufanda gris</h3>
-      <p>$230 MXN</p>
-      <p>Talla Adulto</p>
-      <button class="btn-megusta" data-id="1" data-name="Bufanda gris" data-price="230" data-image="/assets/img/bufanda.png">❤️</button>
-      <button onclick="addToCart(1,'Bufanda gris', 230, '/assets/img/bufanda.png')">Comprar</button>
-    </div>
+ 
+  <div class="product-list" id="productos-container">
+  </div>
 
-    
-    <div class="producto hombre">
-      <div class="imagen-contenedor">
-        <img src="/assets/img/sombreroVaquero.png" alt="Sombrero Café">
-      </div>
-      <h3>Sombrero Café</h3>
-      <p>$350 MXN</p>
-      <p>Talla 3</p>
-      <button class="btn-megusta" data-id="2" data-name="Sombrero Café" data-price="350" data-image="/assets/img/sombreroVaquero.png">❤️</button>
-      <button onclick="addToCart(2,'Sombrero Café', 350, '/assets/img/sombreroVaquero.png')">Comprar</button>
-    </div>
-
-    
-    <div class="producto hombre">
-      <div class="imagen-contenedor">
-        <img src="/assets/img/conjuntoNike.png" alt="Conjunto Nike Azul">
-      </div>
-      <h3>Conjunto Nike Azul</h3>
-      <p>$590 MXN</p>
-      <p>Talla G</p>
-      <button class="btn-megusta" data-id="3" data-name="Conjunto Nike Azul" data-price="590" data-image="/assets/img/conjuntoNike.png">❤️</button>
-      <button onclick="addToCart(3,'Conjunto Nike Azul', 590, '/assets/img/conjuntoNike.png')">Comprar</button>
-    </div>
-
-    
-    <div class="producto mujer">
-      <div class="imagen-contenedor">
-        <img src="/assets/img/tenisPuma.png" alt="Tenis Puma">
-      </div>
-      <h3>Tenis Puma</h3>
-      <p>$450 MXN</p>
-      <p>Talla 24</p>
-      <button class="btn-megusta" data-id="4" data-name="Tenis Puma" data-price="450" data-image="/assets/img/tenisPuma.png">❤️</button>
-      <button onclick="addToCart(4,'Tenis Puma', 450, '/assets/img/tenisPuma.png')">Comprar</button>
-    </div>
-
-    
-    <div class="producto nino">
-      <div class="imagen-contenedor">
-        <img src="/assets/img/hoddieBlanca.png" alt="Sudadera Blanca">
-      </div>
-      <h3>Sudadera Blanca</h3>
-      <p>$100 MXN</p>
-      <p>Talla S</p>
-      <button class="btn-megusta" data-id="5" data-name="Sudadera Blanca" data-price="100" data-image="/assets/img/hoddieBlanca.png">❤️</button>
-      <button onclick="addToCart(5,'Sudadera Blanca', 100, '/assets/img/hoddieBlanca.png')">Comprar</button>
-    </div>
-
-    
-    <div class="producto mujer">
-      <div class="imagen-contenedor">
-        <img src="/assets/img/pantalonesRotos.png" alt="Pantalones Rotos">
-      </div>
-      <h3>Pantalones Rotos</h3>
-      <p>$325 MXN</p>
-      <p>Talla 32</p>
-      <button class="btn-megusta" data-id="6" data-name="Pantalones Rotos" data-price="325" data-image="/assets/img/pantalonesRotos.png">❤️</button>
-      <button onclick="addToCart(6,'Pantalones Rotos', 325, '/assets/img/pantalonesRotos.png')">Comprar</button>
-    </div>
-
-    
-    <div class="producto mujer">
-      <div class="imagen-contenedor">
-        <img src="/assets/img/calcetasRosas.png" alt="Tines Rosas">
-      </div>
-      <h3>Tines Rosas</h3>
-      <p>$50 MXN</p>
-      <p>Talla 23</p>
-      <button class="btn-megusta" data-id="7" data-name="Tines Rosas" data-price="50" data-image="/assets/img/calcetasRosas.png">❤️</button>
-      <button onclick="addToCart(7,'Tines Rosas', 50, '/assets/img/calcetasRosas.png')">Comprar</button>
-    </div>
-
-    
-    <div class="producto hombre">
-      <div class="imagen-contenedor">
-        <img src="/assets/img/corbataNegra.png" alt="Corbata Negra">
-      </div>
-      <h3>Corbata Negra</h3>
-      <p>$25 MXN</p>
-      <p>Talla Adulto</p>
-      <button class="btn-megusta" data-id="8" data-name="Corbata Negra" data-price="25" data-image="/assets/img/corbataNegra.png">❤️</button>
-      <button onclick="addToCart(8,'Corbata Negra', 25, '/assets/img/corbataNegra.png')">Comprar</button>
-    </div>
-
-    
-    <div class="producto mujer">
-      <div class="imagen-contenedor">
-        <img src="/assets/img/shortGuinda.png" alt="Short Guinda">
-      </div>
-      <h3>Short Guinda</h3>
-      <p>$100 MXN</p>
-      <p>Talla S</p>
-      <button class="btn-megusta" data-id="9" data-name="Short Guinda" data-price="100" data-image="/assets/img/shortGuinda.png">❤️</button>
-      <button onclick="addToCart(9,'Short Guinda', 100, '/assets/img/shortGuinda.png')">Comprar</button>
-    </div>
-
-    
-    <div class="producto mujer">
-      <div class="imagen-contenedor">
-        <img src="/assets/img/chamarraNegra.png" alt="Chamarra Negra">
-      </div>
-      <h3>Chamarra Negra</h3>
-      <p>$750 MXN</p>
-      <p>Talla S</p>
-      <button class="btn-megusta" data-id="10" data-name="Chamarra Negra" data-price="750" data-image="/assets/img/chamarraNegra.png">❤️</button>
-      <button onclick="addToCart(10,'Chamarra Negra', 750, '/assets/img/chamarraNegra.png')">Comprar</button>
-    </div>
-
-    <div class="product-list" id="productos-container">
-    </div>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
    //fetch('backend/productos.php')
@@ -231,12 +112,12 @@ fetch('http://localhost/Clotheasy/backend/productos.php')
           const container = document.getElementById('productos-container');
           if (!container) {
               console.error('Error: No existe el contenedor con ID "productos-container"');
-              //return;
+              return;
           }
 
           if (productos.error) {
               container.innerHTML = `<p class="error">${productos.error}</p>`;
-              //return;
+              return;
           }
 
           let html = '';
@@ -260,7 +141,7 @@ fetch('http://localhost/Clotheasy/backend/productos.php')
 
     </script>
 
-  </main>
+  
 
 
 

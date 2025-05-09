@@ -1,11 +1,4 @@
 
-
-
-// function toggleLista(id) {
-//     let lista = document.getElementById(id);
-//     lista.style.display = lista.style.display === "block" ? "none" : "block";
-// }
-// Duración inicial: 48 horas en segundos
 let duracionOferta = 48 * 60 * 60;
 let intervalo;
 

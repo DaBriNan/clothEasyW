@@ -5,13 +5,14 @@ include 'conexion.php';
 $sql = "SELECT 
           c.catalogo_id, 
           c.producto, 
-          c.categoria,
           c.ruta AS imagen, 
           c.descripcion,
           c.precio, 
-          t.talla 
+          t.talla,
+          cat.categoria  
         FROM Catalogo c
-        JOIN Talla t ON c.talla_id = t.talla_id";
+        JOIN Talla t ON c.talla_id = t.talla_id
+        JOIN Categoria cat ON c.categoria_id = cat.categoria_id";
 
 $result = $conexion->query($sql);
 
