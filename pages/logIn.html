@@ -34,10 +34,10 @@
         <div class="modal-contenido">
             <span class="cerrar">&times;</span>
             <h2>Iniciar Sesión</h2>
-            <form id="loginForm">
-                <input type="text" id="usuario" class="login-input" placeholder="Usuario" required>
-                <input type="password" id="password" class="login-input" placeholder="Contraseña" required>
-                <button type="submit" class="login-btn">Iniciar Sesión</button>
+            <form id="loginForm"  action="/backend/login.php" method="post">
+                <input type="text" name="usuario"  id="usuario" class="login-input" placeholder="Usuario" required>
+                <input type="password" name="contra" id="password" class="login-input" placeholder="Contraseña" required>
+                <button type="submit"  class="login-btn">Iniciar Sesión</button>
                 <p id="errorLogin"></p>
             </form>
         </div>
