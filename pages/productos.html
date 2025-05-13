@@ -219,9 +219,13 @@
       <button onclick="addToCart(10,'Chamarra Negra', 750, '/assets/img/chamarraNegra.png')">Comprar</button>
     </div>
 
+    
+
     <div class="product-list" id="productos-container">
     </div>
-    <script>
+
+
+    <!-- <script>
       document.addEventListener('DOMContentLoaded', function() {
    //fetch('backend/productos.php')
 fetch('http://localhost/Clotheasy/backend/productos.php')
@@ -258,7 +262,7 @@ fetch('http://localhost/Clotheasy/backend/productos.php')
       });
 });
 
-    </script>
+    </script> -->
 
   </main>
 
@@ -270,7 +274,9 @@ fetch('http://localhost/Clotheasy/backend/productos.php')
     
   <!-- </div> -->
 
-  <script src="../assets/js/productos.js"></script>
+  <script src="/assets/js/productos.js"></script>
+  <script src="/assets/js/buy.js"></script>
+  
 
   <footer class="footer">
     <div class="footer-container">
@@ -359,10 +365,10 @@ fetch('http://localhost/Clotheasy/backend/productos.php')
       });
       
       // Función para añadir al carrito (simulada)
-      window.addToCart = function(id, name, price, image) {
-        alert(`Producto ${name} añadido al carrito`);
+     // window.addToCart = function(id, name, price, image) {
+       // alert(`Producto ${name} añadido al carrito`);
         // Aquí iría la lógica real para añadir al carrito
-      };
+      //};
     });
   </script>
 
