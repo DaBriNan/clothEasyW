@@ -526,42 +526,6 @@
 
 
 
-/* .modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.5);
-}
-
-.modal-contenido {
-  background: #fff;
-  margin: 10% auto;
-  padding: 20px;
-  width: 90%;
-  max-width: 500px;
-  border-radius: 8px;
-  position: relative;
-}
-
-.cerrar {
-  position: absolute;
-  top: 10px; right: 15px;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.boton-finalizar {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background: #2ecc71;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-} */
 .datos-envio {
   max-width: 500px;
   margin: 40px auto;
@@ -619,16 +583,27 @@
 }
 
 .compra-wrapper {
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex; */
+  /* flex-wrap: wrap;
   gap: 40px;
   padding: 0 40px;
-  justify-content: space-between;
+  justify-content: space-between; */
+
+     max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 #resumenContainer {
+   display: flex;
   flex: 1;
-  min-width: 300px;
+  /* min-width: 300px;  */
+   margin: 20px 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
 }
 
 .datos-envio {
