@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -9,40 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    .btn-megusta {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 1.2rem;
-      padding: 5px;
-    }
-    .btn-megusta.activo {
-      color: red;
-    }
-    .productos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-    .producto {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 15px;
-      text-align: center;
-    }
-    .producto img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 5px;
-    }
-    .producto button {
-      margin: 5px;
-      padding: 8px 12px;
-      cursor: pointer;
-    }
-  </style>
+  
 </head>
 <body>
 
@@ -99,59 +66,18 @@
   <div class="overlay" id="overlay"></div>
 
  
+
+
+
   <div class="product-list" id="productos-container">
-  </div>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-   //fetch('backend/productos.php')
-fetch('http://localhost/Clotheasy/backend/productos.php')
-
-      .then(response => response.json())
-      .then(productos => {
-          const container = document.getElementById('productos-container');
-          if (!container) {
-              console.error('Error: No existe el contenedor con ID "productos-container"');
-              return;
-          }
-
-          if (productos.error) {
-              container.innerHTML = `<p class="error">${productos.error}</p>`;
-              return;
-          }
-
-          let html = '';
-          productos.forEach(p => {
-              html += `
-                  <div class="product">
-                      <img src="assets/images/${p.imagen}" alt="${p.producto}">
-                      <h3>${p.producto}</h3>
-                      <p>$${p.precio.toFixed(2)}</p>
-                      <p>Talla: ${p.talla}</p>
-                      <p>Categoría: ${p.categoria || 'Sin categoría'}</p>
-                  </div>
-              `;
-          });
-          container.innerHTML = html;
-      })
-      .catch(error => {
-          console.error('Error al cargar productos:', error);
-      });
-});
-
-    </script>
-
-  
-
-
-
-  <!-- <div class="product-list" id="productos-container"> -->
-    <!-- Los productos se cargarán aquí con JS -->
-    <!-- <script src="/assets/js/productos.js"></script> -->
+    Los productos se cargarán aquí con JS
+    <script src="/assets/js/productos.js"></script>
     
-  <!-- </div> -->
+   </div> 
 
-  <script src="../assets/js/productos.js"></script>
+  <script src="/assets/js/productos.js"></script>
+  <script src="/assets/js/buy.js"></script>
+  
 
   <footer class="footer">
     <div class="footer-container">
@@ -240,10 +166,10 @@ fetch('http://localhost/Clotheasy/backend/productos.php')
       });
       
       // Función para añadir al carrito (simulada)
-      window.addToCart = function(id, name, price, image) {
-        alert(`Producto ${name} añadido al carrito`);
+     // window.addToCart = function(id, name, price, image) {
+       // alert(`Producto ${name} añadido al carrito`);
         // Aquí iría la lógica real para añadir al carrito
-      };
+      //};
     });
   </script>
 
@@ -251,4 +177,89 @@ fetch('http://localhost/Clotheasy/backend/productos.php')
 
 
 </body>
+</html> -->
+<?php
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="capitulos.css"> -->
+    <link rel="stylesheet" >
+    <title>Capitulos</title>
+    <link rel="icon" href="img/IEEE-FAVICON.png" type="image/png">
+    <style>
+        .home-down {
+            margin-top: 30vw;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="chapters-list"></section>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- <script src="script.js"></script> -->
+
+    <!-- <div id="chapterModal" class="modalChapter">
+        <div class="chapter-content">
+            <span class="close-chapter" >&times;</span>
+            <img id="modalImage" alt="">
+            <div class="modal-details">
+                <h2 id="modalSigl" class="modal-siglas"></h2>
+                <h2 id="modalTitle" class="modal-titulo"></h2>
+                <h2 id="modalDate" class="modal-date">Fecha: </h2>
+                <p id="modalDescription" class="modal-descripcion"></p>
+            </div>
+        </div>
+    </div> -->
+
+
+    <!-- <div class="producto mujer">
+      <div class="imagen-contenedor">
+        <img src="/assets/img/tenisPuma.png" alt="Tenis Puma">
+      </div>
+      <h3>Tenis Puma</h3>
+      <p>$450 MXN</p>
+      <p>Talla 24</p>
+      <button class="btn-megusta" data-id="4" data-name="Tenis Puma" data-price="450" data-image="/assets/img/tenisPuma.png">❤️</button>
+      <button onclick="addToCart(4,'Tenis Puma', 450, '/assets/img/tenisPuma.png')">Comprar</button>
+    </div> -->
+
+    <script>
+        $(document).ready(function () {
+            //getChapters();
+            
+          $.ajax({
+              type: 'GET',
+              url: '../backend/prueba.php?myInfo=getChapters',
+              success: function (data) {
+                 //alert(data)
+                  const apiResult = JSON.parse(data)
+                  const container = document.getElementById('chapters-list');
+
+                  apiResult.forEach((result, idx) => {
+                    //adaptar a tu codigo
+                      const content = `
+                      <div class="productos mujer" data-id=${result.categoriaP}>
+                          <h2 class="titulo">${result.nombreProducto}</h2>
+                          <img class ="img-Chapter" src=../assets/img/${result.rutaImagen} alt="chapter">
+                          <p class="descripcion">${result.descripcionDeProducto}</p>
+                          <button class="btn-more" onclick="">Ver más</button>
+                      </div>
+                      `;
+
+                      container.innerHTML += content;
+                  })
+              }
+          });
+           
+        });
+    </script>
+
+</body>
+
 </html>
