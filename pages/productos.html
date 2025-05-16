@@ -192,54 +192,9 @@
     </div>
 
 
-    <!-- <script>
-      document.addEventListener('DOMContentLoaded', function() {
-   //fetch('backend/productos.php')
-fetch('http://localhost/Clotheasy/backend/productos.php')
-
-      .then(response => response.json())
-      .then(productos => {
-          const container = document.getElementById('productos-container');
-          if (!container) {
-              console.error('Error: No existe el contenedor con ID "productos-container"');
-              //return;
-          }
-
-          if (productos.error) {
-              container.innerHTML = `<p class="error">${productos.error}</p>`;
-              //return;
-          }
-
-          let html = '';
-          productos.forEach(p => {
-              html += `
-                  <div class="product">
-                      <img src="assets/images/${p.imagen}" alt="${p.producto}">
-                      <h3>${p.producto}</h3>
-                      <p>$${p.precio.toFixed(2)}</p>
-                      <p>Talla: ${p.talla}</p>
-                      <p>Categoría: ${p.categoria || 'Sin categoría'}</p>
-                  </div>
-              `;
-          });
-          container.innerHTML = html;
-      })
-      .catch(error => {
-          console.error('Error al cargar productos:', error);
-      });
-});
-
-    </script> -->
-
-  </main>
+    </main>
 
 
-
-  <!-- <div class="product-list" id="productos-container"> -->
-    <!-- Los productos se cargarán aquí con JS -->
-    <!-- <script src="/assets/js/productos.js"></script> -->
-    
-  <!-- </div> -->
 
   <script src="/assets/js/productos.js"></script>
   <script src="/assets/js/buy.js"></script>
@@ -339,7 +294,23 @@ fetch('http://localhost/Clotheasy/backend/productos.php')
     });
   </script>
 
+  <div id="ai-chat-container">
+    <div id="ai-chat-header">
+      <span>🛍️ Asistente ClothEasy</span>
+      <button id="close-chat">×</button>
+    </div>
+    <div id="ai-chat-messages"></div>
+    <div class="chat-input-container">
+      <input type="text" id="ai-chat-input" placeholder="Escribe tu pregunta...">
+      <button id="ai-send-btn">Enviar</button>
+    </div>
+  </div>
 
+  <button id="open-chat">
+    <i class="fas fa-robot"></i>
+  </button>
+
+  <script src="/assets/js/chatbot.js"></script>
 
 
 </body>

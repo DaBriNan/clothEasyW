@@ -8,6 +8,7 @@
 
   <link rel="icon" type="image/x-icon" href="/assets/img/logoFinal.png">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   
 </head>
 <body>
@@ -123,5 +124,24 @@
       // Aquí iría la lógica real para añadir al carrito
     };
   </script>
+
+  <div id="ai-chat-container">
+    <div id="ai-chat-header">
+      <span>🛍️ Asistente ClothEasy</span>
+      <button id="close-chat">×</button>
+    </div>
+    <div id="ai-chat-messages"></div>
+    <div class="chat-input-container">
+      <input type="text" id="ai-chat-input" placeholder="Escribe tu pregunta...">
+      <button id="ai-send-btn">Enviar</button>
+    </div>
+  </div>
+
+  <button id="open-chat">
+    <i class="fas fa-robot"></i>
+  </button>
+
+  <script src="/assets/js/chatbot.js"></script>
+
 </body>
 </html>
