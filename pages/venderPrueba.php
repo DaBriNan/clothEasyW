@@ -45,13 +45,16 @@
     
 </header> 
 
+ <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
 <h1><span class="azul">Publicar</span> <span class="celeste">Producto</span></h1>
 
 <body>
     <main>
          <section class="formulario">
       <h2>Detalles del Producto</h2>
-      <form id="formularioProducto" action="#" method="POST" enctype="multipart/form-data">
+      <form id="formularioProducto"  method="POST" enctype="multipart/form-data">
 
         <label>Subir Imagen:</label>
         <input type="file" id="imagen" name="imagen" accept="image/*" required />
@@ -92,77 +95,66 @@
     </main>
 
 
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-
     <script>
-        function insertProduct(productData) {
-    // Crear FormData para enviar los datos del formulario, incluyendo archivos
-    const formData = new FormData();
-    
-    // Agregar todos los datos del producto al FormData
-    formData.append('func', 'insertProduct');
-    formData.append('producto', productData.nombre);
-    formData.append('precio', productData.precio);
-    formData.append('talla_id', productData.talla);
-    formData.append('categoria_id', productData.categoria);
-    formData.append('description', productData.descripcion);
-    formData.append('imagen', productData.imagen); // Archivo de imagen
-
-    $.ajax({
-        type: 'POST',
-        url: '../backend/vender.php', // Ruta a tu archivo PHP
+       $(document).ready(function() {
+    // Manejador del evento submit del formulario
+    $('formularioProducto').on('submit', function(e) {
+        e.preventDefault(); // Prevenir el envío tradicional del formulario
         
-        data: formData,
-        processData: false, // Necesario para FormData
-        contentType: false, // Necesario para FormData
-        success: function(response) {
-    console.log("Respuesta cruda:", response);
-    try {
-        let json = JSON.parse(response); // En caso de que response no venga parseado
-        if(json.success) {
-            alert('Producto publicado exitosamente!');
-            window.location.href = "/produPrueba.php";
-        } else {
-            alert('Error: ' + json.message);
-        }
-    } catch (e) {
-        alert("Error al parsear respuesta del servidor");
-        console.error("Error JSON:", e);
-        console.error("Respuesta recibida:", response);
-    }
-}
+        // Crear un objeto FormData para manejar los datos del formulario
+        var formData = new FormData(this);
+        formData.append('action', 'crearProducto'); // Agregar acción específica
 
+        $.ajax({
+            url: '../backend/vender.php', // Ruta a tu script PHP
+            type: 'POST',
+            data: formData,
+            processData: false, // Importante para FormData
+            contentType: false, // Importante para FormData
+            success: function(response) {
+                alert(response);
+                try {
+                    var data = JSON.parse(response);
+                    if(data.success) {
+                        
+                        alert('Producto publicado con éxito!');
+                        window.location.href = "produPrueba.php"; // Redirigir
+                    } else {
+                        alert('Error: ' + data.message);
+                    }
+                } catch(e) {
+                    console.error('Error parsing JSON:', e, response);
+                    alert('Ocurrió un error inesperado');
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error AJAX:', status, error);
+                alert('Error al conectar con el servidor');
+            }
+        });
     });
-}
 
-// Uso del código en tu formulario
-$(document).ready(function() {
-    $('#formularioProducto').submit(function(e) {
-        e.preventDefault();
-        
-        // Obtener datos del formulario
-        const productData = {
-            nombre: $('#nombre').val(),
-            precio: $('#precio').val(),
-            talla: $('#talla').val(),
-            categoria: $('#categoria').val(),
-            descripcion: $('#descripcion').val(),
-            imagen: $('#imagen')[0].files[0] // Obtener el archivo de imagen
-        };
-        
-        // Validaciones básicas
-        if(!productData.nombre || !productData.precio || !productData.imagen) {
-            alert('Por favor complete todos los campos requeridos');
-            return;
+    // Actualizar vista previa en tiempo real
+    $('#nombre, #precio, #talla').on('input', function() {
+        $('#nombrePreview').text($('#nombre').val() || 'Nombre del producto');
+        $('#precioPreview').text('$' + ($('#precio').val() || '0.00'));
+        $('#tallaPreview').text($('#talla').val() || 'N/A');
+    });
+
+    // Vista previa de la imagen
+    $('#imagen').on('change', function(e) {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('.preview img').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
         }
-        
-        // Llamar a la función de inserción
-        insertProduct(productData);
     });
 });
     </script>
+
+   
 
     
 <script src="/assets/js/vender.js"></script>
