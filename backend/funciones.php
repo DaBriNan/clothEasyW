@@ -57,3 +57,5 @@ function isEmptyInput(&$array){
     }
     return false;
 }
+
+//////////adaptarlo para que haga un insert en ventas
