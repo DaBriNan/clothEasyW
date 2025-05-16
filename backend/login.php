@@ -56,6 +56,7 @@ if(isset($_POST["submit"])) {
     $uidExists = uidExists($conexion, $usr);
     if(!$uidExists) {
         //header("location: ../../src/login/login.html?error=wronglogin");
+        
         exit();
     }
 

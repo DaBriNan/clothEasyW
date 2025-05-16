@@ -34,7 +34,7 @@
 //     //Closing the statement
 //     mysqli_stmt_close($stmt);
 //     //Closing the connection
-//     mysqli_close($conn);
+//     mysqli_close($conexion);
 // }
 function uidExists($conexion, $usr) {
     $sql = "SELECT * FROM usuarios WHERE correo = ?"; // Solo busca por correo
@@ -56,4 +56,22 @@ function isEmptyInput(&$array){
         if(empty($v)) return true;
     }
     return false;
+}
+
+//////////adaptarlo para que haga un insert en ventas
+function crearProducto($conexion, $producto, $ruta, $descripcion, $precio, $talla,$categoria) {
+    $sql = "INSERT INTO catalogo (producto, ruta, descripcion, precio, talla_id,categoria_id) 
+            VALUES (?, ?, ?, ?, ?, ?,?);";
+    $stmt = mysqli_stmt_init($conexion);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        return -1;
+    }
+
+    mysqli_stmt_bind_param($stmt, "sssss", $producto, $ruta, $descripcion, $precio, $talla, $categoria);
+
+    mysqli_stmt_execute($stmt);
+
+    mysqli_stmt_close($stmt);
+
+    return mysqli_insert_id($conexion);
 }

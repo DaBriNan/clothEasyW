@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const precioInput = document.getElementById('precio');
     const ubicacionInput = document.getElementById('ubicacion');
     const precioPreview = document.getElementById('precioPreview');
-    const ubicacionPreview = document.getElementById('ubicacionPreview');
+    const ubicacionPreview = document.getElementById('tallaPreview');
     const previewImg = document.querySelector('.preview img');
 
     imagenInput.addEventListener('change', function (e) {
@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
         precioPreview.textContent = `$${precioInput.value}`;
     });
 
-    ubicacionInput.addEventListener('input', function () {
-        ubicacionPreview.textContent = ubicacionInput.value;
+    tallaInput.addEventListener('input', function () {
+        ubicacionPreview.textContent = tallaInput.value;
     });
 
     document.getElementById('formularioProducto').addEventListener('submit', function (e) {
