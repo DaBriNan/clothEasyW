@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/assets/img/logoFinal.png">
     <link rel="stylesheet" href="clotheS.css">
-    <link rel="stylesheet"  href="/assets/estilos/vender.css" >
+    <link rel="stylesheet"  href="../assets/estilos/vender.css" >
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <title>Vender</title>
@@ -54,7 +54,7 @@
     <main>
          <section class="formulario">
       <h2>Detalles del Producto</h2>
-      <form id="formularioProducto"  method="POST" enctype="multipart/form-data">
+      <form id="formularioProducto" action="../backend/vender.php"  method="POST" enctype="multipart/form-data">
 
         <label>Subir Imagen:</label>
         <input type="file" id="imagen" name="imagen" accept="image/*" required />
@@ -79,7 +79,7 @@
         <label>Descripción:</label>
         <textarea id="descripcion" name="description" placeholder="Describe el producto..." required></textarea>
 
-        <button type="submit">Publicar</button>
+        <button type="submit" name="submit">Publicar</button>
       </form>
     </section>
 
