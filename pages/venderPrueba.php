@@ -35,10 +35,10 @@
     <a href="../pages/produPrueba.php" class="comprar"><span class="textoc">Comprar</span></a>
     <a href="../pages/paraTiP.php" class="paraTi"><span class="textop">Para ti</span></a>
 
-    <div class="meGusta">
-        <img src="../assets/img/Heart.png" alt="meGusta" class="imagen">
-    </div>
-    <a href="pages/login.html" class="user">
+    <a href="../pages/meGusta.php" class="meGusta">
+            <img src="../assets/img/Heart.png" alt="meGusta" class="imagen">
+        </a>
+    <a href="../pages/login.html" class="user">
         <img src="../assets/img/user.png" alt="login" class="imagen">
     </a>
     
@@ -66,7 +66,7 @@
         <input type="number" id="precio" name="precio" placeholder="$" required min="1" />
 
         <label>Talla:</label>
-        <input type="text" id="talla" name="talla_id" placeholder="XS, S, M ..." required />
+        <input type="text" id="talla" name="talla_id" placeholder="1=S, 2=M, 3=L, 4=XL, 5=XS, 6= 22MX..." required />
 
         <label>Categoría:</label>
         <select id="categoria" name="categoria_id" required>

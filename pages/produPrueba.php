@@ -37,9 +37,9 @@
     <a href="../pages/venderPrueba.php" class="vender"><span class="texto">Vender</span></a>
     <a href="../pages/produPrueba.php" class="comprar"><span class="textoc">Comprar</span></a>
     <a href="../pages/paraTiP.php" class="paraTi"><span class="textop">Para ti</span></a>
-    <a href="../pages/meGusta.html" class="meGusta">
-      <img src="../assets/img/Heart.png" alt="meGusta" class="imagen">
-    </a>
+    <a href="../pages/meGusta.php" class="meGusta">
+            <img src="../assets/img/Heart.png" alt="meGusta" class="imagen">
+        </a>
     <a href="../pages/login.html" class="user">
         <img src="../assets/img/user.png" alt="login" class="imagen">
     </a>
