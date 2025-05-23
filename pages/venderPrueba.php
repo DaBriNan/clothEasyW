@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/assets/img/logoFinal.png">
+    <link rel="icon" type="image/x-icon" href="../assets/img/logoFinal.png">
     <link rel="stylesheet" href="clotheS.css">
     <link rel="stylesheet"  href="../assets/estilos/vender.css" >
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -16,8 +16,8 @@
 </head>
  <header class="barra-menu">
     
-    <a href="/index.html">
-        <img src="/assets/img/logoFinal.png" class="imgMenu" alt="Inicio">
+    <a href="../index.html">
+        <img src="../assets/img/logoFinal.png" class="imgMenu" alt="Inicio">
     </a>
     
     <div class="container">
@@ -31,15 +31,15 @@
           </div>
         </form>
     </div>
-    <a href="/pages/vender.html" class="vender"><span class="texto">Vender</span></a>
-    <a href="/pages/productos.html" class="comprar"><span class="textoc">Comprar</span></a>
-    <a href="/pages/paraTi.html" class="paraTi"><span class="textop">Para ti</span></a>
+    <a href="../pages/venderPrueba.php" class="vender"><span class="texto">Vender</span></a>
+    <a href="../pages/produPrueba.php" class="comprar"><span class="textoc">Comprar</span></a>
+    <a href="../pages/paraTiP.php" class="paraTi"><span class="textop">Para ti</span></a>
 
     <div class="meGusta">
-        <img src="/assets/img/Heart.png" alt="meGusta" class="imagen">
+        <img src="../assets/img/Heart.png" alt="meGusta" class="imagen">
     </div>
-    <a href="/pages/login.html" class="user">
-        <img src="/assets/img/user.png" alt="login" class="imagen">
+    <a href="pages/login.html" class="user">
+        <img src="../assets/img/user.png" alt="login" class="imagen">
     </a>
     
     
@@ -87,7 +87,7 @@
         <section class="resumen">
             <h1>Vista Previa</h1>
             <div class="preview">
-                <img src="/assets/img/polo.png" alt="Vista previa del producto" >
+                <img src="../assets/img/polo.png" alt="Vista previa del producto" >
                 <p><strong>Precio:</strong> <span id="precioPreview">$0.00</span></p>
                 <p><strong>Talla:</strong> <span id="tallaPreview">N/A</span></p>
             </div>
@@ -157,8 +157,8 @@
    
 
     
-<script src="/assets/js/vender.js"></script>
-<script src="/assets/js/scrpitInicio.js"></script>
+<script src="assets/js/vender.js"></script>
+<script src="assets/js/scrpitInicio.js"></script>
 
 </body>
 </html>

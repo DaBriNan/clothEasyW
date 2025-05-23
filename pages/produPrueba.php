@@ -13,7 +13,7 @@
      <link rel="stylesheet"  href="clotheS.css" >
     <link rel="stylesheet"  href="productos.css" >
     <title>Productos</title>
-    <link rel="icon" href="img/IEEE-FAVICON.png" type="image/png">
+    <link rel="icon" type="image/x-icon" href="../assets/img/logoFinal.png">
     <style>
         .home-down {
             margin-top: 30vw;
@@ -22,8 +22,8 @@
 </head>
 
  <header class="barra-menu">
-    <a href="index.html">
-        <img src="/assets/img/logoFinal.png" class="imgMenu" alt="Inicio">
+    <a href="../index.html">
+        <img src="../assets/img/logoFinal.png" class="imgMenu" alt="Inicio">
     </a>
     <div class="container">
       <form action="" class="search-form">
@@ -34,14 +34,14 @@
         </div>
       </form>
     </div>
-    <a href="/pages/vender.html" class="vender"><span class="texto">Vender</span></a>
-    <a href="/pages/productos.html" class="comprar"><span class="textoc">Comprar</span></a>
-    <a href="/pages/paraTi.html" class="paraTi"><span class="textop">Para ti</span></a>
-    <a href="/pages/meGusta.html" class="meGusta">
-      <img src="/assets/img/Heart.png" alt="meGusta" class="imagen">
+    <a href="../pages/venderPrueba.php" class="vender"><span class="texto">Vender</span></a>
+    <a href="../pages/produPrueba.php" class="comprar"><span class="textoc">Comprar</span></a>
+    <a href="../pages/paraTiP.php" class="paraTi"><span class="textop">Para ti</span></a>
+    <a href="../pages/meGusta.html" class="meGusta">
+      <img src="../assets/img/Heart.png" alt="meGusta" class="imagen">
     </a>
-    <a href="/pages/login.html" class="user">
-        <img src="/assets/img/user.png" alt="login" class="imagen">
+    <a href="../pages/login.html" class="user">
+        <img src="../assets/img/user.png" alt="login" class="imagen">
     </a>
   </header>
 
@@ -80,8 +80,11 @@
     
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="productos.js"></script>
-    <script src="buy.js"></script>
+
+        <script src="../assets/js/productos.js"></script>
+        <script src="../assets/js/buy.js"></script>
+    <!-- <script src="productos.js"></script> -->
+    <!-- <script src="buy.js"></script> -->
 
 
  
@@ -133,9 +136,9 @@
             <h2>CLOTHEASY</h2>
             <p>REDES SOCIALES</p>
             <div class="social-icons">
-                <img src="/assets/img/facebook.png" alt="Facebook">
-                <img src="/assets/img/instagram.png" alt="Instagram">
-                <img src="/assets/img/x.png" alt="Email">
+                <img src="../assets/img/facebook.png" alt="Facebook">
+                <img src="../assets/img/instagram.png" alt="Instagram">
+                <img src="../assets/img/x.png" alt="Email">
             </div>
         </div>
 
